@@ -1,3 +1,13 @@
-Tervetuloa digitaaliseen kirjahyllyysi, jossa voit lisätä kirjan sekä lukea kirjojen arvosteluja!
-<p>
-Kävijöitä tähän mennessä: {{ counter }}. 
+{% if session.username %}
+<p>Olet kirjautunut nimellä {{ session.username }}</p>
+<p>Tervetuloa digitaaliseen kirjahyllyysi. Kävijöitä tähän mennessä: {{ counter }}. </p>
+<a href="/logout">Kirjaudu ulos</a>
+{% else %}
+<form action="/login" method="POST">
+<p>Tunnus:<br>
+<input type="text" name="username"></p>
+<p>Salasana:<br>
+<input type="password" name="password"></p>
+<input type="submit" value="Kirjaudu">
+</form>
+{% endif %}
