@@ -3,10 +3,10 @@ import visits
 from flask import redirect, render_template, request, session
 
 @app.route("/Vanha Etusivu")
-def index():
+def vanhaindex():
     books = ["Syvä äly","Musashi","foundation"]
     # nyt message myös index.html:ssä
-    return render_template("index.html",message="Tervetuloa!",items=books)
+    return render_template("vanha_index.html",message="Tervetuloa!",items=books)
 
 # Kirjan lisäämistä
 @app.route("/register_new_book")
