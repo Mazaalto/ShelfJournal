@@ -1,5 +1,5 @@
 from app import app
-import visits, messages
+import visits, messages, users
 from flask import redirect, render_template, request, session
 
 @app.route("/Vanha Etusivu")
