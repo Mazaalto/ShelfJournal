@@ -1,1 +1,18 @@
 <!DOCTYPE html>
+
+Viestien määrä: {{ count }}
+<hr>
+{% for message in messages %}
+<i>Viesti:</i> {{ message[0] }}
+<p>
+<i>Lähettäjä:</i> {{ message[1] }}
+<p>
+<i>Aika:</i> {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}
+<hr>
+{% endfor %}
+{% if session.user_id %}
+Olet kirjautunut sisään.
+<a href="/new">Lähetä viesti</a> | <a href="/logout">Kirjaudu ulos</a>
+{% else %}
+<a href="/login">Kirjaudu sisään</a>
+{% endif %}
