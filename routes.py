@@ -14,7 +14,7 @@ def registered_book():
     book_title = request.form["book_title"]
     author_name = request.form["author_name"]
 
-    if books.save(book_title, author):
+    if books.save(book_title, author_name):
         return redirect("/")
     else:
         return render_template("error.html",message=" Kirjan tallentaminen ei onnistunut ")

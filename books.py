@@ -8,7 +8,7 @@ def get_books_as_a_list():
     return result.fetchall()
 
 # Kirjan lisäys tietokantaan
-def save(book_title, author):
+def save(book_title, author_name):
     user_id = users.user_id()
     if user_id == 0:
         return False
