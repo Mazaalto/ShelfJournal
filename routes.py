@@ -12,7 +12,7 @@ def register_new_book():
 @app.route("/registered_book", methods=["POST"])
 def registered_book():
     book_title = request.form["book_title"]
-    author = request.form["author"]
+    author_name = request.form["author_name"]
 
     if books.save(book_title, author):
         return redirect("/")
@@ -23,6 +23,8 @@ def registered_book():
 def index():
     list = messages.get_list()
     return render_template("index.html", count=len(list), messages=list)
+
+# viestien lähetys esimerkkinä
 
 @app.route("/new")
 def new():

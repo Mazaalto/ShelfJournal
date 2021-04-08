@@ -6,7 +6,7 @@ CREATE TABLE users (
 CREATE TABLE books (
     id SERIAL PRIMARY KEY,
     book_title TEXT,
-    author TEXT,
+    author_name TEXT,
     user_id INTEGER REFERENCES users,
     sent_at TIMESTAMP
 );
