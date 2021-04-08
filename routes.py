@@ -15,10 +15,9 @@ def registered_book():
     author = request.form["author"]
 
     if books.save(book_title, author):
-        print("uuden kirjan tallennus toimii")
         return redirect("/")
     else:
-        return render_template("error.html",message="Kirjan tallentaminen ei onnistunut")
+        return render_template("error.html",message=" Kirjan tallentaminen ei onnistunut ")
 
 @app.route("/")
 def index():
