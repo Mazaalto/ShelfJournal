@@ -6,20 +6,19 @@ from flask import redirect, render_template, request, session
 # Kirjan lisäämistä
 @app.route("/register_new_book")
 def register_new_book():
+    return render_template("register_new_book.html")
+        
+# tässä opettelen tallentamaan kirjaa, kuten oppimateriaalissa
+@app.route("/registered_book", methods=["POST"])
+def registered_book():
     book_title = request.form["book_title"]
     author = request.form["author"]
 
     if books.save(book_title, author):
+        print("uuden kirjan tallennus toimii")
         return redirect("/")
     else:
         return render_template("error.html",message="Kirjan tallentaminen ei onnistunut")
-        
-
-@app.route("/registered_book", methods=["POST"])
-def registered_book():
-    book_name = request.form["book_name"]
-    author_name = request.form["author_name"]
-    return render_template("registered_book.html", book_name=book_name, author_name=author_name)
 
 @app.route("/")
 def index():
