@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 
-Viestien määrä: {{ count }}
+<a href="/login">Kirjaudu sisään</a>
+<title>ShelfJournal</title>
+<h1>ShelfJournal</h1>
+<p>{{ message }}</p> <i>digitaaliseen kirjahyllyysi!</i>!
+<p>
+Voit pitää yllä omaa digitaalista kirjahyllyä ja arvostella omia kirjoja palvelussa, sekä
+nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille <br> Rekisteröityjä kirjoja python koodista:
+<p>
+<img src="/static/kirjahylly.jpg">
+Kirjojen määrä: {{ count }}
 <hr>
 {% for message in messages %}
 <i>Viesti:</i> {{ message[0] }}
@@ -13,19 +22,6 @@ Viestien määrä: {{ count }}
 {% if session.user_id %}
 Olet kirjautunut sisään.
 <a href="/new">Lähetä viesti</a> | <a href="/logout">Kirjaudu ulos</a>
-<title>ShelfJournal</title>
-<h1>ShelfJournal</h1>
-<p>{{ message }}</p> <i>digitaaliseen kirjahyllyysi!</i>!
-<p>
-Voit pitää yllä omaa digitaalista kirjahyllyä ja arvostella omia kirjoja palvelussa, sekä
-nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille <br> Rekisteröityjä kirjoja python koodista:
-<p>
-<ul>
-{% for item in items %}
-<li> {{ item }}
-{% endfor %}
-</ul>
-<img src="/static/kirjahylly.jpg">
+
 {% else %}
-<a href="/login">Kirjaudu sisään</a>
 {% endif %}
