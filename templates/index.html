@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-
-Kirjojen määrä: {{ count }}
-<hr>
-{% for message in messages %}
-<i>Viesti:</i> {{ message[0] }}
-<p>
-<i>Lähettäjä:</i> {{ message[1] }}
-<p>
-<i>Aika:</i> {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}
-<hr>
-{% endfor %}
 {% if session.user_id %}
 Olet kirjautunut sisään.
 <a href="/new">Lähetä viesti</a> | <a href="/logout">Kirjaudu ulos</a>
@@ -20,7 +9,17 @@ Olet kirjautunut sisään.
 Voit pitää yllä omaa digitaalista kirjahyllyä ja arvostella omia kirjoja palvelussa, sekä
 nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille <br> Rekisteröityjä kirjoja python koodista:
 <p>
-<img src="/static/kirjahylly.jpg">
 {% else %}
 <a href="/login">Kirjaudu sisään</a>
 {% endif %}
+Kirjojen määrä: {{ count }}
+<hr>
+{% for message in messages %}
+<i>Viesti:</i> {{ message[0] }}
+<p>
+<i>Lähettäjä:</i> {{ message[1] }}
+<p>
+<i>Aika:</i> {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}
+<hr>
+{% endfor %}
+<img src="/static/kirjahylly.jpg">
