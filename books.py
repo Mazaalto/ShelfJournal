@@ -3,7 +3,7 @@ import users
 
 # Kirjat listaksi
 def get_books_as_a_list():
-    sql = "SELECT B.book_title, B.author, U.username, B.sent_at FROM books B, users U WHERE B.user_id=U.id ORDER BY B.id"
+    sql = "SELECT B.book_title, B.author_name, U.username, B.sent_at FROM books B, users U WHERE B.user_id=U.id ORDER BY B.id"
     result = db.session.execute(sql)
     return result.fetchall()
 
