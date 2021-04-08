@@ -2,11 +2,6 @@ from app import app
 import visits, messages, users
 from flask import redirect, render_template, request, session
 
-@app.route("/Vanha Etusivu")
-def vanhaindex():
-    books = ["Syvä äly","Musashi","foundation"]
-    # nyt message myös index.html:ssä
-    return render_template("vanha_index.html",message="Tervetuloa!",items=books)
 
 # Kirjan lisäämistä
 @app.route("/register_new_book")
@@ -15,7 +10,7 @@ def register_new_book():
     author = request.form["author"]
 
     if books.save(book_title, author):
-        return redirect("/registered_book")
+        return redirect("/")
     else:
         return render_template("error.html",message="Kirjan tallentaminen ei onnistunut")
         
