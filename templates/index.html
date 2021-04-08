@@ -15,14 +15,6 @@ nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille <br> Rekisteröityj
 {% endif %}
 Kirjojen määrä: {{ count }}
 <hr>
-{% for book in books %}
-<i>Kirjan nimi:</i> {{ books[0] }}
-<p>
-<i>Kirjoittajan nimi:</i> {{ books[1] }}
-<p>
-<i>Aika:</i> {{ books[3].strftime("%Y-%m-%d %H:%M:%S") }}
-<hr>
-<hr>
 {% for message in messages %}
 <i>Viesti:</i> {{ message[0] }}
 <p>
