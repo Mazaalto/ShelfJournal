@@ -11,7 +11,14 @@ def vanhaindex():
 # Kirjan lisäämistä
 @app.route("/register_new_book")
 def register_new_book():
-    return render_template("register_new_book.html")
+    book_title = request.form["book_title"]
+    author = request.form["author"]
+
+    if books.save(book_title, author):
+        return redirect("/registered_book")
+    else:
+        return render_template("error.html",message="Kirjan tallentaminen ei onnistunut")
+        
 
 @app.route("/registered_book", methods=["POST"])
 def registered_book():
