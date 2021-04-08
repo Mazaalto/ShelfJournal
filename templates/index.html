@@ -18,21 +18,9 @@ nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille <br> Rekisteröityj
 <p>
 <i>Kirjoittaja tai kirjoittajat:</i> {{ book[1] }}
 <p>
-<p>
 <i>Lisääjä:</i> {{ book[2] }}
 <p>
 <i>Aika:</i> {{ book[3].strftime("%Y-%m-%d %H:%M:%S") }}
-<hr>
-{% endfor %}
-
-Viestien määrä harjoitus: {{ count }}
-<hr>
-{% for message in messages %}
-<i>Viesti:</i> {{ message[0] }}
-<p>
-<i>Lähettäjä:</i> {{ message[1] }}
-<p>
-<i>Aika:</i> {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}
 <hr>
 {% endfor %}
 <img src="/static/kirjahylly.jpg">
