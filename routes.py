@@ -24,6 +24,10 @@ def index():
     list = messages.get_list()
     return render_template("index.html", count=len(list), messages=list)
 
+@app.route("/new")
+def new():
+    return render_template("new.html")
+
 @app.route("/send", methods=["POST"])
 def send():
     content = request.form["content"]
@@ -32,18 +36,7 @@ def send():
     else:
         return render_template("error.html",message="Viestin lähetys ei onnistunut")
 
-@app.route("/login", methods=["GET","POST"])
-def login():
-    if request.method == "GET":
-        return render_template("login.html")
-    if request.method == "POST":
-        username = request.form["username"]
-        password = request.form["password"]
-        if users.login(username,password):
-            return redirect("/")
-        else:
-            return render_template("error.html",message="Väärä tunnus tai salasana")
-
+# uuden käyttäjän rekisteröiminen
 @app.route("/register", methods=["GET","POST"])
 def register():
     if request.method == "GET":
@@ -55,11 +48,19 @@ def register():
             return redirect("/")
         else:
             return render_template("error.html",message="Rekisteröinti ei onnistunut")
-
-@app.route("/new")
-def new():
-    return render_template("new.html")
-
+# Kirjautuminen sovellukseen
+@app.route("/login", methods=["GET","POST"])
+def login():
+    if request.method == "GET":
+        return render_template("login.html")
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        if users.login(username,password):
+            return redirect("/")
+        else:
+            return render_template("error.html",message="Väärä tunnus tai salasana")
+# Uloskirjautuminen
 @app.route("/logout")
 def logout():
     users.logout()
