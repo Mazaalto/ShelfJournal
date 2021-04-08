@@ -13,7 +13,15 @@ nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille <br> Rekisteröityj
 {% else %}
 <a href="/login">Kirjaudu sisään</a>
 {% endif %}
-Kirjojen määrä: {{ count }}
+{% for book in books %}
+<i>Kirjan nimi:</i> {{ book[0] }}
+<p>
+<i>Kirjoittaja tai kirjoittajat:</i> {{ book[1] }}
+<p>
+<i>Aika:</i> {{ book[2].strftime("%Y-%m-%d %H:%M:%S") }}
+<hr>
+{% endfor %}
+Viestien määrä harjoitus: {{ count }}
 <hr>
 {% for message in messages %}
 <i>Viesti:</i> {{ message[0] }}
