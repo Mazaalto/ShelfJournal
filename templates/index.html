@@ -5,7 +5,7 @@ Olet kirjautunut sisään.
 <a href="/register_new_book">Lisää kirja kirjahyllyysi</a>
 <title>ShelfJournal</title>
 <h1>ShelfJournal</h1>
-<p>{{ message }}</p> <i>digitaaliseen kirjahyllyysi!</i>!
+<p>Tervetuloa</p> <i>digitaaliseen kirjahyllyysi!</i>!
 <p>
 Voit pitää yllä omaa digitaalista kirjahyllyä ja arvostella omia kirjoja palvelussa, sekä
 nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille <br> Rekisteröityjä kirjoja python koodista:
@@ -14,6 +14,14 @@ nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille <br> Rekisteröityj
 <a href="/login">Kirjaudu sisään</a>
 {% endif %}
 Kirjojen määrä: {{ count }}
+<hr>
+{% for book in books %}
+<i>Kirjan nimi:</i> {{ books[0] }}
+<p>
+<i>Kirjoittajan nimi:</i> {{ books[1] }}
+<p>
+<i>Aika:</i> {{ books[3].strftime("%Y-%m-%d %H:%M:%S") }}
+<hr>
 <hr>
 {% for message in messages %}
 <i>Viesti:</i> {{ message[0] }}
