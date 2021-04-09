@@ -13,13 +13,13 @@ def register_new_book():
 def registered_book():
     book_title = request.form["book_title"]
     if len(book_title) > 50:
-        return render_template("error.html", error = "Kirjoitit liian pitkän nimen kirjalle")
+        return render_template("error.html", message = "Kirjoitit liian pitkän nimen kirjalle")
     author_name = request.form["author_name"]
     if len(author_name) > 40:
-        return render_template("error.html", error = "Kirjoitit liian pitkän nimen kirjailijalle tai kirjailijoille")    
+        return render_template("error.html", message = "Kirjoitit liian pitkän nimen kirjailijalle tai kirjailijoille")    
     info = request.form["info"]
     if len(info) > 100:
-        return render_template("error.html", error = "Kirjoitit liian pitkän kuvauksen")
+        return render_template("error.html", message = "Kirjoitit liian pitkän kuvauksen")
     # tahan tulee kategoria, jahka hakutoiminto toimii
 
     if books.save(book_title, author_name, info):
