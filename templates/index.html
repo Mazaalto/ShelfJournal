@@ -10,10 +10,6 @@
 Voit pitää yllä omaa digitaalista kirjahyllyä ja arvostella omia kirjoja palvelussa, sekä
 nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille
 </p>
-{% else %}
-<a href="/login">Kirjaudu sisään</a>
-
-{% endif %}
 {% for book in books %}
 <i>Kirjan nimi:</i> {{ book[0] }}
 <p>
@@ -24,4 +20,10 @@ nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille
 <i>Aika:</i> {{ book[3].strftime("%Y-%m-%d %H:%M:%S") }}
 <hr>
 {% endfor %}
+
+{% else %}
+<a href="/login">Kirjaudu sisään</a>
+
+{% endif %}
+
 <img src="/static/kirjahylly.jpg">
