@@ -1,45 +1,45 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="main.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<body>
-    
+
 <html>
-{% if session.user_id %}
-<p>Olet kirjautunut ShelfJournaliin.</p>
-<title>ShelfJournal</title>
-<nav>
-    <ul>
-      <li><a href="/register_new_book">Lisää kirja kirjahyllyysi</a></li>
-      <li><a href="/logout">Kirjaudu ulos</a></li>
-      <li><a href="/search">Etsi kirjaa</a></li>
-    </ul>
-  </nav>
- 
+    <head>{% if session.user_id %}
+        <p>Olet kirjautunut ShelfJournaliin.</p>
+        <title>ShelfJournal</title>
+        <nav>
+            <ul>
+              <li><a href="/register_new_book">Lisää kirja kirjahyllyysi</a></li>
+              <li><a href="/search">Etsi kirjaa</a></li>
+              <li><a href="/logout">Kirjaudu ulos</a></li>
+            </ul>
+          </nav>
+         
+        <h1>ShelfJournal</h1>
+        <p>Tervetuloa digitaaliseen kirjahyllyysi!</p>
+        <p>
+        Voit pitää yllä omaa digitaalista kirjahyllyä ja arvostella omia kirjoja palvelussa, sekä
+        nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille
+        </p>
+        {% for book in books %}
+        <i>Kirjan nimi:</i> {{ book[0] }}
+        <p>
+        <i>Kirjoittaja tai kirjoittajat:</i> {{ book[1] }}
+        <p>
+        <i>Lisääjä:</i> {{ book[2] }}
+        <p>
+        <i>Aika:</i> {{ book[3].strftime("%Y-%m-%d %H:%M:%S") }}
+        <hr>
+        {% endfor %}
+        
+        {% else %}
+        <a href="/login">Kirjaudu sisään</a>
+        
+        {% endif %}
+        <p>
+        
+        </p>
+        <img src="/static/kirjahylly.jpg"> 
+    </head>
+    <body>
+        
+    </body>
 
-<h1>ShelfJournal</h1>
-<p>Tervetuloa digitaaliseen kirjahyllyysi!</p>
-<p>
-Voit pitää yllä omaa digitaalista kirjahyllyä ja arvostella omia kirjoja palvelussa, sekä
-nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille
-</p>
-{% for book in books %}
-<i>Kirjan nimi:</i> {{ book[0] }}
-<p>
-<i>Kirjoittaja tai kirjoittajat:</i> {{ book[1] }}
-<p>
-<i>Lisääjä:</i> {{ book[2] }}
-<p>
-<i>Aika:</i> {{ book[3].strftime("%Y-%m-%d %H:%M:%S") }}
-<hr>
-{% endfor %}
-
-{% else %}
-<a href="/login">Kirjaudu sisään</a>
-
-{% endif %}
-<p>
-
-</p>
-<img src="/static/kirjahylly.jpg">
 </html>
-</body>
