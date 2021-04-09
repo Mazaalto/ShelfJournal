@@ -1,45 +1,50 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <form action="/registered_book" method="post"onsubmit="return validate(this)">
+        Kirjan nimi: <br>
+        <textarea name="book_title" rows="3" cols="60"></textarea>
+        <p>
+        Kirjailijan nimi: <br>
+        <textarea name="author_name" rows="3" cols="60"></textarea>
+        <p>
+        Kuvaus kirjasta: <br>
+        <textarea name="info" rows="3" cols="60"></textarea>
+        <p>   
+        
+        <input type="submit" value="Lähetä">
+        </form>
+        <script>
+            function validate(form) {
+                if (form.book_title.value.length == 0) {
+                    alert("Kirjan nimi on tyhjä");
+                    return false;
+                }
+                if (form.author_name.value.length == 0) {
+                    alert("Kirjailijan tai kirjailijoiden nimi on tyhjä");
+                    return false;
+                }
+                if (form.info.value.length == 0) {
+                    alert("Et antanut kirjalle kuvausta");
+                    return false;
+                }
+                if (form.book_title.value.length > 50) {
+                    alert("Kirjan nimi on liian pitkä");
+                    return false;
+                }
+                if (form.author_name.value.length > 40) {
+                    alert("Kirjailijan nimi on liian pitkä");
+                    return false;
+                }
+                if (form.info.value.length > 100) {
+                    alert("Kirjoitit liian pitkän kuvauksen. Maksimi pituus on 100 merkkiä");
+                    return false;
+                }
+                return true;
+            }
+            </script>
+        
 
-<form action="/registered_book" method="post"onsubmit="return validate(this)">
-
-Kirjan nimi: <br>
-<textarea name="book_title" rows="3" cols="60"></textarea>
-<p>
-Kirjailijan nimi: <br>
-<textarea name="author_name" rows="3" cols="60"></textarea>
-<p>
-Kuvaus kirjasta: <br>
-<textarea name="info" rows="3" cols="60"></textarea>
-<p>   
-
-<input type="submit" value="Lähetä">
-</form>
-<script>
-    function validate(form) {
-        if (form.book_title.value.length == 0) {
-            alert("Kirjan nimi on tyhjä");
-            return false;
-        }
-        if (form.author_name.value.length == 0) {
-            alert("Kirjailijan tai kirjailijoiden nimi on tyhjä");
-            return false;
-        }
-        if (form.info.value.length == 0) {
-            alert("Et antanut kirjalle kuvausta");
-            return false;
-        }
-        if (form.book_title.value.length > 50) {
-            alert("Kirjan nimi on liian pitkä");
-            return false;
-        }
-        if (form.author_name.value.length > 40) {
-            alert("Kirjailijan nimi on liian pitkä");
-            return false;
-        }
-        if (form.info.value.length > 100) {
-            alert("Kirjoitit liian pitkän kuvauksen. Maksimi pituus on 100 merkkiä");
-            return false;
-        }
-        return true;
-    }
-    </script>
+    </head>
+    <body></body>
+</html>

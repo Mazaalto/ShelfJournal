@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<h1>ShelfJournal</h1>
-<p>Löytyi seuraavat kirjat</p>
-{% for book in books %}
-<i>Kirjan nimi:</i> {{ book[1] }}
-<p>
-<i>Kirjoittaja tai kirjoittajat:</i> {{ book[2] }}
-<p>
-{% endfor %}
+<html>
+    <head>
+        <h1>ShelfJournal</h1>
+        <p>Löytyi seuraavat kirjat</p>
+        {% for book in books %}
+        <i>Kirjan nimi:</i> {{ book[1] }}
+        <p>
+        <i>Kirjoittaja tai kirjoittajat:</i> {{ book[2] }}
+        <p>
+        {% endfor %}
+        
+    </head>
+    <body></body>
+</html>
