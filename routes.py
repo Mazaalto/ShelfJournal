@@ -1,5 +1,5 @@
 from app import app
-import visits, messages, users, books
+import users, books
 from flask import redirect, render_template, request, session
 
 
@@ -13,6 +13,7 @@ def register_new_book():
 def registered_book():
     book_title = request.form["book_title"]
     author_name = request.form["author_name"]
+    # tähän tulee kategoria, jahka hakutoiminto toimii
 
     if books.save(book_title, author_name):
         return redirect("/")
@@ -21,23 +22,8 @@ def registered_book():
 
 @app.route("/")
 def index():
-    #list = messages.get_list()
     list = books.get_books_as_a_list()
     return render_template("index.html", count=len(list), books=list)
-
-# viestien lähetys esimerkkinä
-
-@app.route("/new")
-def new():
-    return render_template("new.html")
-
-@app.route("/send", methods=["POST"])
-def send():
-    content = request.form["content"]
-    if messages.send(content):
-        return redirect("/")
-    else:
-        return render_template("error.html",message="Viestin lähetys ei onnistunut")
 
 # uuden käyttäjän rekisteröiminen
 @app.route("/register", methods=["GET","POST"])
@@ -50,7 +36,7 @@ def register():
         if users.register(username,password):
             return redirect("/")
         else:
-            return render_template("error.html",message="Rekisteröinti ei onnistunut")
+            return render_template("error.html",message="Käyttäjänimi saattaa olla käytössä, kokeile toista nimeä")
 # Kirjautuminen sovellukseen
 @app.route("/login", methods=["GET","POST"])
 def login():
@@ -62,7 +48,7 @@ def login():
         if users.login(username,password):
             return redirect("/")
         else:
-            return render_template("error.html",message="Väärä tunnus tai salasana")
+            return render_template("error.html",message="Väärä tunnus tai salasana. Ole hyvä ja kokeile uudelleen!")
 # Uloskirjautuminen
 @app.route("/logout")
 def logout():
