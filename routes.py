@@ -3,17 +3,23 @@ import users, books
 from flask import redirect, render_template, request, session
 
 
-# Kirjan liaamista
+# Kirjan lisaamista
 @app.route("/register_new_book")
 def register_new_book():
     return render_template("register_new_book.html")
         
-# tassa opettelen tallentamaan kirjaa, kuten oppimateriaalissa
+# Kirjan tallentamista
 @app.route("/registered_book", methods=["POST"])
 def registered_book():
     book_title = request.form["book_title"]
+    if len(book_title) > 50:
+        return render_template("error.html", error = "Kirjoitit liian pitkän nimen kirjalle")
     author_name = request.form["author_name"]
+    if len(author_name) > 40:
+        return render_template("error.html", error = "Kirjoitit liian pitkän nimen kirjailijalle tai kirjailijoille")    
     info = request.form["info"]
+    if len(info) > 100:
+        return render_template("error.html", error = "Kirjoitit liian pitkän kuvauksen")
     # tahan tulee kategoria, jahka hakutoiminto toimii
 
     if books.save(book_title, author_name, info):
