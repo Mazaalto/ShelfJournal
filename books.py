@@ -17,9 +17,15 @@ def save(book_title, author_name, info):
     db.session.commit()
     return True
 
-#Toteutettu krijan nimen etsintä
+#Toteutettu kirjan etsintä nimen perusteella
 def search(query):
     sql = "SELECT id, book_title, author_name FROM books WHERE book_title LIKE :query"
+    result = db.session.execute(sql, {"query":"%"+query+"%"})
+    return result.fetchall()
+
+# Kirjan etsintä kirjailijan nimen perusteella
+def search_from_author(query):
+    sql = "SELECT id, book_title, author_name FROM books WHERE author_name LIKE :query"
     result = db.session.execute(sql, {"query":"%"+query+"%"})
     return result.fetchall()
 

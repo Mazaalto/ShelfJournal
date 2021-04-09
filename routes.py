@@ -73,11 +73,15 @@ def logout():
 def search():
     return render_template("search.html")
 
-# Tiedon hakutoiminto, toteutan ensin kirjan nimen perusteella haun, sitten kirjailijan ja lopuksi infon
+# Tiedon hakutoiminto, toteutan ensin kirjan nimen perusteella haun
 @app.route("/search_result", methods=["GET"])
 def search_result():
     query = request.args["query"]
-    # search_type = request.form["search_type"]
-    # antaa numeron, 1 Kirjan nimi, 2 kirjailija, 3 info
     list = books.search(query)
+    return render_template("result.html",books=list)
+
+@app.route("/search_result_from_author", methods=["GET"])
+def search_result():
+    query = request.args["query"]
+    list = books.search_from_author(query)
     return render_template("result.html",books=list)
