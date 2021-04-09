@@ -77,7 +77,7 @@ def search():
 @app.route("/search_result", methods=["GET"])
 def search_result():
     query = request.args["query"]
-    search_type = request.form["search_type"]
+    # search_type = request.form["search_type"]
     # antaa numeron, 1 Kirjan nimi, 2 kirjailija, 3 info
     list = books.search(query)
     return render_template("result.html",books=list)
