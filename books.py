@@ -18,7 +18,7 @@ def save(book_title, author_name):
     return True
 
 def search(query):
-    sql = "SELECT id, book_title FROM books WHERE book_title LIKE :query"
+    sql = "SELECT id, book_title, author_name FROM books WHERE book_title LIKE :query"
     result = db.session.execute(sql, {"query":"%"+query+"%"})
     return result.fetchall()
 
@@ -26,6 +26,6 @@ def search(query):
     #CREATE TABLE books (
     # id SERIAL PRIMARY KEY,
     # book_title TEXT,
-    # author TEXT,
+    # author_name TEXT,
     # user_id INTEGER REFERENCES users,
     # sent_at TIMESTAMP
