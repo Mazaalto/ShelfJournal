@@ -58,7 +58,7 @@ def logout():
     users.logout()
     return redirect("/")
 
-# Etsiminen
+# Kirjan etsiminen
 @app.route("/search")
 def search():
     return render_template("search.html")

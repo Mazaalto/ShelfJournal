@@ -5,13 +5,14 @@
 <a href="/search">Etsi kirjaa</a>
 <title>ShelfJournal</title>
 <h1>ShelfJournal</h1>
-<p>Tervetuloa</p> <i>digitaaliseen kirjahyllyysi!</i>!
+<p>Tervetuloa digitaaliseen kirjahyllyysi!</p>
 <p>
 Voit pitää yllä omaa digitaalista kirjahyllyä ja arvostella omia kirjoja palvelussa, sekä
-nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille <br> Rekisteröityjä kirjoja python koodista:
-<p>
+nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille
+</p>
 {% else %}
 <a href="/login">Kirjaudu sisään</a>
+
 {% endif %}
 {% for book in books %}
 <i>Kirjan nimi:</i> {{ book[0] }}
