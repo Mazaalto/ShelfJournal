@@ -37,6 +37,7 @@ def register():
             return redirect("/")
         else:
             return render_template("error.html",message="Käyttäjänimi saattaa olla käytössä, kokeile toista nimeä")
+
 # Kirjautuminen sovellukseen
 @app.route("/login", methods=["GET","POST"])
 def login():
@@ -49,8 +50,19 @@ def login():
             return redirect("/")
         else:
             return render_template("error.html",message="Väärä tunnus tai salasana. Ole hyvä ja kokeile uudelleen!")
+
 # Uloskirjautuminen
 @app.route("/logout")
 def logout():
     users.logout()
     return redirect("/")
+
+# Tiedon hakutoiminto
+@app.route("/search_result", methods=["GET"])
+def search_result():
+    # query saa arvonsa sivun osoitteesta, sieltä tieto tänne
+    query = request.args["query"]
+    sql = "SELECT id, book_title FROM books WHERE book_title LIKE :query"
+    result = db.session.execute(sql, {"query":"%"+query+"%"})
+    books = result.fetchall()
+    return render_template("search_result.html",books=books)
