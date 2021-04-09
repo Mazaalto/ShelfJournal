@@ -39,7 +39,11 @@ def register():
         return render_template("register.html")
     if request.method == "POST":
         username = request.form["username"]
+        if len(username) < 8 or len(username) > 20:
+            return render_template("error.html", message = "Käyttäjätunnus on liian lyhyt(alle 8) tai pitkä (yli 30)")
         password = request.form["password"]
+        if len(password) < 8 or len(password) > 20:
+            return render_template("error.html", message = "Salasana on liian lyhyt(alle 8) tai pitkä (yli 30)")
         if users.register(username,password):
             return redirect("/")
         else:
