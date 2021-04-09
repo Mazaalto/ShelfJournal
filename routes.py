@@ -61,8 +61,7 @@ def logout():
 @app.route("/search_result", methods=["GET"])
 def search_result():
     # query saa arvonsa sivun osoitteesta, sieltä tieto tänne
-    query = request.args["query"]
-    sql = "SELECT id, book_title FROM books WHERE book_title LIKE :query"
-    result = db.session.execute(sql, {"query":"%"+query+"%"})
-    books = result.fetchall()
-    return render_template("result.html",books=books)
+    " query = request.args["query"]
+    # käytetään booksin metodia
+    list = books.search()
+    return render_template("result.html",books=list)
