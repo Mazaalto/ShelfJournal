@@ -56,7 +56,7 @@ def login():
 def logout():
     users.logout()
     return redirect("/")
-    
+
 # Etsiminen
 @app.route("/search")
 def search():
@@ -65,8 +65,6 @@ def search():
 # Tiedon hakutoiminto
 @app.route("/search_result", methods=["GET"])
 def search_result():
-    # query saa arvonsa sivun osoitteesta, sieltä tieto tänne
-    # query = request.args["query"]
-    # käytetään booksin metodia
-    list = books.search()
+    query = request.args["query"]
+    list = books.search(query)
     return render_template("result.html",books=list)

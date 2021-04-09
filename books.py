@@ -18,17 +18,10 @@ def save(book_title, author_name):
     return True
 
 def search():
-    # query = request.args["query"], query saa arvonsa sivun osoitteesta, sieltä tieto tänne. Tapahtuu routes.py
-    # sql = "SELECT book_title FROM books WHERE book_title LIKE :query"
-    # result = db.session.execute(sql, {"query":"%"+query+"%"})
-
-    #toteutetaan ensin yksinkertainen haku, ilman querya. Missä määritellään manuaalisesti hakusana
-
-    sql = "SELECT author_name FROM books where author_name='Tolkien'"
-    result = db.session.execute(sql)
+    sql = "SELECT id, book_name FROM books WHERE book_name LIKE :query"
+    result = db.session.execute(sql, {"query":"%"+query+"%"})
     return result.fetchall()
-    
-    
+
     # muistutus books taulun rakenteesta
     #CREATE TABLE books (
     # id SERIAL PRIMARY KEY,
