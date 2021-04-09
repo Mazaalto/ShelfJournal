@@ -17,7 +17,7 @@ def save(book_title, author_name):
     db.session.commit()
     return True
 
-def search():
+def search(query):
     sql = "SELECT id, book_name FROM books WHERE book_name LIKE :query"
     result = db.session.execute(sql, {"query":"%"+query+"%"})
     return result.fetchall()
