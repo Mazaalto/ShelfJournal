@@ -78,6 +78,9 @@ def search():
 def search_result():
     query = request.args["query"]
     search_type = request.form["search_type"]
-    print(search_type)
-    list = books.search(query)
-    return render_template("result.html",books=list)
+    # antaa numeron, 1 Kirjan nimi, 2 kirjailija, 3 info
+    if search_type = "1":
+        list = books.search(query)
+        return render_template("result.html",books=list)
+    
+    return render_template("error.html",message="Haku ei toiminut")

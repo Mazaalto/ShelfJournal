@@ -2,13 +2,13 @@
 <html>
     <head>
         <p>Täällä voit etsiä onko kirja jo tietokannassa. </p>
-        <form action="/search_result" method="GET"></form>
+        <form action="/search_result" method="GET">
         Hae: <br>
         <input type="radio" name="search_type" value="1" checked> Kirjan nimen perusteella
         <input type="radio" name="search_type" value="2"> Kirjailijan nimellä
         <input type="radio" name="search_type" value="3"> Infon perusteella
 
-        Kirjan nimi: <input type="text" name="query">
+        Hakusana: <input type="text" name="query">
         <br>
         <input type="submit" value="Lähetä">
         </form>
