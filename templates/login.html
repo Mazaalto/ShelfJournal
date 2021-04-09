@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
+    {% extends "layout.html" %}
     <head>
+        {% block title %}Kirjautuminen{% endblock %}
+        {% block content %}
+        <h2>Kirjautuminen</h2>
         <form action="/login" method="post"></form>
         Tunnus: <input type="text" name="username">
         <p>
@@ -13,4 +17,6 @@
     <body>
         
     </body>
+    {% endblock %}
 </html>
+

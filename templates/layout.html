@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ShelfJournal - {% block title %}{% endblock %}</title>
+        <h1>ShelfJournal</h1>
+        <a href="/">Etusivu</a>
+        <a href="/login">Kirjautuminen</a>
+        <hr>
+        {% block content %}{% endblock %}
+        <hr>
+
+    </head>
+    <body>
+        body {
+            margin: auto;
+            max-width: 45em;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+        }
+        
+        nav li {
+            display: inline-block;
+            padding: 0 .5em;
+        }
+        
+
+    </body>
+</html>
+
+

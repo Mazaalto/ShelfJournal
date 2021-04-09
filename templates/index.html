@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 
 <html>
+  {% extends "layout.html" %}
+  {% block title %}Etusivu{% endblock %}
+  {% block content %}
+  <h2>Etusivu</h2>
+  Tervetuloa ShelfJournaliin!
     <head>{% if session.user_id %}
+      
         <p>Olet kirjautunut ShelfJournaliin.</p>
         <title>ShelfJournal</title>
         <nav>
@@ -41,5 +47,5 @@
     <body>
         
     </body>
-
+    {% endblock %}
 </html>
