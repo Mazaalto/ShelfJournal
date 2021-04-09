@@ -8,7 +8,9 @@ CREATE TABLE books (
     book_title TEXT,
     author_name TEXT,
     user_id INTEGER REFERENCES users,
-    sent_at TIMESTAMP
+    sent_at TIMESTAMP,
+    info TEXT
+
 );
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,

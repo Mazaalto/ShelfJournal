@@ -13,9 +13,10 @@ def register_new_book():
 def registered_book():
     book_title = request.form["book_title"]
     author_name = request.form["author_name"]
+    info = request.form["info"]
     # tahan tulee kategoria, jahka hakutoiminto toimii
 
-    if books.save(book_title, author_name):
+    if books.save(book_title, author_name, info):
         return redirect("/")
     else:
         return render_template("error.html",message=" Kirjan tallentaminen ei onnistunut ")
@@ -25,7 +26,7 @@ def index():
     list = books.get_books_as_a_list()
     return render_template("index.html", count=len(list), books=list)
 
-# uuden käyttäjän rekisteröiminen
+# Uuden käyttäjän rekisteröiminen
 @app.route("/register", methods=["GET","POST"])
 def register():
     if request.method == "GET":
