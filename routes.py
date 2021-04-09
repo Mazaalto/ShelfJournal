@@ -3,17 +3,17 @@ import users, books
 from flask import redirect, render_template, request, session
 
 
-# Kirjan lisäämistä
+# Kirjan liaamista
 @app.route("/register_new_book")
 def register_new_book():
     return render_template("register_new_book.html")
         
-# tässä opettelen tallentamaan kirjaa, kuten oppimateriaalissa
+# tassa opettelen tallentamaan kirjaa, kuten oppimateriaalissa
 @app.route("/registered_book", methods=["POST"])
 def registered_book():
     book_title = request.form["book_title"]
     author_name = request.form["author_name"]
-    # tähän tulee kategoria, jahka hakutoiminto toimii
+    # tahan tulee kategoria, jahka hakutoiminto toimii
 
     if books.save(book_title, author_name):
         return redirect("/")
@@ -65,4 +65,4 @@ def search_result():
     sql = "SELECT id, book_title FROM books WHERE book_title LIKE :query"
     result = db.session.execute(sql, {"query":"%"+query+"%"})
     books = result.fetchall()
-    return render_template("search_result.html",books=books)
+    return render_template("result.html",books=books)
