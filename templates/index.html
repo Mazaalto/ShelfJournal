@@ -1,7 +1,18 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="main.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<html>
 {% if session.user_id %}
 <p>Olet kirjautunut ShelfJournaliin.</p>
-<a href="/register_new_book">Lisää kirja kirjahyllyysi</a> | <a href="/logout">Kirjaudu ulos</a> |
+<nav>
+    <ul>
+      <li><a href="/register_new_book">Lisää kirja kirjahyllyysi</a></li>
+      <li><a href="/logout">Kirjaudu ulos</a></li>
+      <li><a href="/search">Etsi kirjaa</a></li>
+    </ul>
+  </nav>
+ 
 <a href="/search">Etsi kirjaa</a>
 <title>ShelfJournal</title>
 <h1>ShelfJournal</h1>
@@ -27,3 +38,5 @@ nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille
 {% endif %}
 
 <img src="/static/kirjahylly.jpg">
+</html>
+</body>
