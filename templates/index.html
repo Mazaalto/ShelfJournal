@@ -5,6 +5,7 @@
 <html>
 {% if session.user_id %}
 <p>Olet kirjautunut ShelfJournaliin.</p>
+<title>ShelfJournal</title>
 <nav>
     <ul>
       <li><a href="/register_new_book">Lisää kirja kirjahyllyysi</a></li>
@@ -13,8 +14,7 @@
     </ul>
   </nav>
  
-<a href="/search">Etsi kirjaa</a>
-<title>ShelfJournal</title>
+
 <h1>ShelfJournal</h1>
 <p>Tervetuloa digitaaliseen kirjahyllyysi!</p>
 <p>
@@ -36,7 +36,9 @@ nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille
 <a href="/login">Kirjaudu sisään</a>
 
 {% endif %}
-
+<p>
+    
+</p>
 <img src="/static/kirjahylly.jpg">
 </html>
 </body>
