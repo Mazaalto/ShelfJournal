@@ -56,6 +56,11 @@ def login():
 def logout():
     users.logout()
     return redirect("/")
+    
+# Etsiminen
+@app.route("/search")
+def search():
+    return render_template("search.html")
 
 # Tiedon hakutoiminto
 @app.route("/search_result", methods=["GET"])
