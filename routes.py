@@ -61,7 +61,7 @@ def logout():
 @app.route("/search_result", methods=["GET"])
 def search_result():
     # query saa arvonsa sivun osoitteesta, sieltä tieto tänne
-    " query = request.args["query"]
+    # query = request.args["query"]
     # käytetään booksin metodia
     list = books.search()
     return render_template("result.html",books=list)
