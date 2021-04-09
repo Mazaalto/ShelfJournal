@@ -73,7 +73,7 @@ def logout():
 def search():
     return render_template("search.html")
 
-# Tiedon hakutoiminto, toteutan ensin kirjan nimen perusteella haun
+# Tiedon hakutoiminnot, toteutan ensin kirjan nimen perusteella haun
 @app.route("/search_result", methods=["GET"])
 def search_result():
     query = request.args["query"]
@@ -85,3 +85,10 @@ def search_result_from_author():
     query = request.args["query"]
     list = books.search_from_author(query)
     return render_template("result.html",books=list)
+
+@app.route("/search_result_from_genre", methods=["GET"])
+def search_result_from_genre():
+    query = request.args["query"]
+    list = books.search_from_genre(query)
+    return render_template("result.html",books=list)
+

@@ -8,7 +8,7 @@
         Kirjailijan nimi: <br>
         <textarea name="author_name" rows="3" cols="60"></textarea>
         <p>
-        Kuvaus kirjasta: <br>
+        Kirjan genre: <br>
         <textarea name="info" rows="3" cols="60"></textarea>
         <p>   
         
@@ -37,7 +37,7 @@
                     return false;
                 }
                 if (form.info.value.length > 100) {
-                    alert("Kirjoitit liian pitkän kuvauksen. Maksimi pituus on 100 merkkiä");
+                    alert("Kirjoitit liian pitkän genren kuvauksen. Maksimi pituus on 100 merkkiä");
                     return false;
                 }
                 return true;

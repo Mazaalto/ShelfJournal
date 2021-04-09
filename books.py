@@ -29,4 +29,9 @@ def search_from_author(query):
     result = db.session.execute(sql, {"query":"%"+query+"%"})
     return result.fetchall()
 
+# Kirjan etsiminen genren perusteella
+def search_from_genre(query):
+    sql = "SELECT id, book_title, author_name, info FROM books WHERE info LIKE :query"
+    result = db.session.execute(sql, {"query":"%"+query+"%"})
+    return result.fetchall()
     

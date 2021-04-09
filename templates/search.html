@@ -6,13 +6,19 @@
         <form action="/search_result" method="GET">
         Hae kirjan nimen perusteella kirjoja: <input type="text" name="query">
         <br>
-        <input type="submit" value="Lähetä">
+        <input type="submit" value="Etsi">
         </form>
 
         <form action="/search_result_from_author" method="GET">
-        Hae kirjilijan nimen perusteella kirjoja: <input type="text" name="query">
+        Hae kirjailijan tai kirjailijoiden nimen perusteella kirjoja: <input type="text" name="query">
         <br>
-        <input type="submit" value="Lähetä">
+        <input type="submit" value="Etsi">
+        </form>
+
+        <form action="/search_result_from_genre" method="GET">
+        Hae genren perusteella kirjoja: <input type="text" name="query">
+        <br>
+        <input type="submit" value="Etsi">
         </form>
 
     </head>
