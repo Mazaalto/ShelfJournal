@@ -81,7 +81,7 @@ def search_result():
     return render_template("result.html",books=list)
 
 @app.route("/search_result_from_author", methods=["GET"])
-def search_result():
+def search_result_from_author():
     query = request.args["query"]
     list = books.search_from_author(query)
     return render_template("result.html",books=list)
