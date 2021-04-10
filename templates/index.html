@@ -35,7 +35,6 @@
           <tr>
             <th>Kirjan nimi</th>
             <th>Kirjoittaja tai kirjoittajat</th>
-            <th>Lisääjä</th>
             <th>Aika</th>
             <th>Arviointi</th>
             <th>Arviot</th>
@@ -43,6 +42,7 @@
         {% for book in books %}
         <tr>
           <td>{{ book[1] }}</td>
+          <td> {{ book[2] }}</td>
           <td> {{ book[2] }}</td>
           <td>{{ book[4].strftime("%Y-%m-%d %H:%M:%S") }}</td>
           <td>Tähän tulee kirjan arviointi</td>
