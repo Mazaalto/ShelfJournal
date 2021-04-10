@@ -3,7 +3,18 @@
 <html>
   Tervetuloa ShelfJournaliin!
     <head>{% if session.user_id %}
-      
+      <style>
+        table, td, th {
+          border: 1px solid black;
+        }
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        td {
+          text-align: center;
+        }
+        </style>
         <p>Olet kirjautunut ShelfJournaliin.</p>
         <title>ShelfJournal</title>
         <nav>
@@ -21,7 +32,7 @@
         nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille
         </p>
         {% for book in books %}
-        <table border="2">
+        <table>
           <tr>
             <td>
               <i>Kirjan nimi:</i> {{ book[0] }}
