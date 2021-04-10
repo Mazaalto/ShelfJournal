@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            table, td, th {
+              border: 3px solid black;
+            }
+            table {
+              border-collapse: collapse;
+              width: 80%;
+            }
+            td {
+              text-align: center;
+            }
+            </style>
         <h1>ShelfJournal</h1>
         <p>Löytyi seuraavat kirjat</p>
-        {% for book in books %}
-        <i>Kirjan nimi:</i> {{ book[1] }}
-        <p>
-        <i>Kirjoittaja tai kirjoittajat:</i> {{ book[2] }}
-        <p>
-        {% endfor %}
+        <table>
+            <tr>
+              <th>Kirjan nimi</th>
+              <th>Kirjoittaja tai kirjoittajat</th>
+            </tr>
+          {% for book in books %}
+          <tr>
+            <td>{{ book[1] }}</td>
+            <td>{{ book[2] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
         
     </head>
     <body></body>
