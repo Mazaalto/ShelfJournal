@@ -21,14 +21,16 @@
         nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille
         </p>
         {% for book in books %}
-        <i>Kirjan nimi:</i> {{ book[0] }}
-        <p>
-        <i>Kirjoittaja tai kirjoittajat:</i> {{ book[1] }}
-        <p>
-        <i>Lisääjä:</i> {{ book[2] }}
-        <p>
-        <i>Aika:</i> {{ book[3].strftime("%Y-%m-%d %H:%M:%S") }}
-        <hr>
+        <table border="2">
+          <tr>
+            <td>
+              <i>Kirjan nimi:</i> {{ book[0] }}
+              <i>Kirjoittaja tai kirjoittajat:</i> {{ book[1] }}
+              <i>Lisääjä:</i> {{ book[2] }}
+              <i>Aika:</i> {{ book[3].strftime("%Y-%m-%d %H:%M:%S") }}
+            </td>
+          </tr>
+        </table>
         {% endfor %}
         
         {% else %}
