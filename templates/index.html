@@ -9,7 +9,7 @@
         }
         table {
           border-collapse: collapse;
-          width: 100%;
+          width: 80%;
         }
         td {
           text-align: center;
@@ -41,11 +41,11 @@
           </tr>
         {% for book in books %}
         <tr>
-          <td><i>Kirjan nimi:</i> {{ book[0] }}</td>
-          <td><i>Kirjoittaja tai kirjoittajat:</i> {{ book[1] }}</td>
-          <td><i>Lisääjä:</i> {{ book[2] }}</td>
-          <td><i>Aika:</i> {{ book[3].strftime("%Y-%m-%d %H:%M:%S") }}</td>
-          <td><i>Arvio</i>Työnalla</td>
+          <td>{{ book[0] }}</td>
+          <td>{{ book[1] }}</td>
+          <td> {{ book[2] }}</td>
+          <td>{{ book[3].strftime("%Y-%m-%d %H:%M:%S") }}</td>
+          <td>Työnalla</td>
         </tr>
         {% endfor %}
       </table>
