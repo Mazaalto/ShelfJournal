@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<html>
+{{ topic }}
+<hr>
+<ul>
+{% for star in stars %}
+<li> {{ star[0] }}: {{ star[1] }} kpl
+{% endfor %}
+</ul>
+<hr>
+<a href="/reviews">Takaisin arvioihin</a>
+</html>

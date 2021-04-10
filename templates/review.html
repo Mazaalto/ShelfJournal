@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+{{ topic }}
+<hr>
+<form action="/answer" method="POST">
+{% for star in stars %}
+<input type="radio" name="answer" value="{{ star[0] }}"> {{ star[1] }} <br>
+{% endfor %}
+<p>
+<input type="submit" value="Lähetä">
+<p></p>
+<input type="hidden" name="id" value="{{ id }}">
+</form>
+<hr>
+<a href="/">Takaisin arvioihin</a>
+</html>

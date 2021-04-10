@@ -21,6 +21,7 @@
             <ul>
               <li><a href="/register_new_book">Lisää kirja kirjahyllyysi</a></li>
               <li><a href="/search">Etsi kirjaa</a></li>
+              <li><a href="/new">Arvostele kirja</a></li>
               <li><a href="/logout">Kirjaudu ulos</a></li>
             </ul>
           </nav>
@@ -37,15 +38,16 @@
             <th>Kirjoittaja tai kirjoittajat</th>
             <th>Lisääjä</th>
             <th>Aika</th>
-            <th>Arvio</th>
+            <th>Arviointi</th>
+            <th>Arviot</th>
           </tr>
         {% for book in books %}
         <tr>
-          <td>{{ book[0] }}</td>
           <td>{{ book[1] }}</td>
           <td> {{ book[2] }}</td>
           <td>{{ book[3].strftime("%Y-%m-%d %H:%M:%S") }}</td>
-          <td>Työnalla</td>
+          <td><a href="/book/{{ book[0] }}">Arvioi kirja</a></td>
+          <td><a href="/reviews/{{ book[0] }}">Arviot</a></td>
         </tr>
         {% endfor %}
       </table>

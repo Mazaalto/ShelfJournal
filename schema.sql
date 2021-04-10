@@ -12,10 +12,19 @@ CREATE TABLE books (
     info TEXT
 
 );
+CREATE TABLE review_as_stars (
+    id SERIAL PRIMARY KEY,
+    topic TEXT,
+    created_at TIMESTAMP
+);
+CREATE TABLE stars (
+    id SERIAL PRIMARY KEY,
+    book_id INTEGER REFERENCES review_as_stars,
+    stars TEXT
+);
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
-    review TEXT,
-    user_id INTEGER REFERENCES books,
+    stars_id INTEGER REFERENCES stars,
     sent_at TIMESTAMP
 );
 
