@@ -31,18 +31,24 @@
         Voit pitää yllä omaa digitaalista kirjahyllyä ja arvostella omia kirjoja palvelussa, sekä
         nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille
         </p>
-        {% for book in books %}
         <table>
           <tr>
-            <td>
-              <i>Kirjan nimi:</i> {{ book[0] }}
-              <i>Kirjoittaja tai kirjoittajat:</i> {{ book[1] }}
-              <i>Lisääjä:</i> {{ book[2] }}
-              <i>Aika:</i> {{ book[3].strftime("%Y-%m-%d %H:%M:%S") }}
-            </td>
+            <th>Kirjan nimi</th>
+            <th>Kirjoittaja tai kirjoittajat</th>
+            <th>Lisääjä</th>
+            <th>Aika</th>
+            <th>Arvio</th>
           </tr>
-        </table>
+        {% for book in books %}
+        <tr>
+          <td><i>Kirjan nimi:</i> {{ book[0] }}</td>
+          <td><i>Kirjoittaja tai kirjoittajat:</i> {{ book[1] }}</td>
+          <td><i>Lisääjä:</i> {{ book[2] }}</td>
+          <td><i>Aika:</i> {{ book[3].strftime("%Y-%m-%d %H:%M:%S") }}</td>
+          <td><i>Arvio</i>Työnalla</td>
+        </tr>
         {% endfor %}
+      </table>
         
         {% else %}
         <a href="/login">Kirjaudu sisään</a>
