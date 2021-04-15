@@ -94,7 +94,5 @@ def search_result_from_genre():
 
 @app.route("/kirjantiedot/<int:id>")
 def kirjantiedot(id):
-    sql = "SELECT book FROM books WHERE id=:id"
-    result = db.session.execute(sql, {"id":id})
-    book = result.fetchone()[0]
+    book = books.getbook(id)
     return render_template("book.html", id=id, book=book)
