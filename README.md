@@ -11,7 +11,7 @@ Sovelluksessa näkyy oma kirjasto, joista voi etsiä tietoa ja lukea arvioita. K
 3. Käyttäjä voi etsiä kirjan nimen perusteella :heavy_check_mark:
 4. Käyttäjä voi etsiä kirjailijan nimen perusteella :heavy_check_mark:
 5. Käyttäjä voi etsiä genren perusteella :heavy_check_mark:
-6. Käyttäjä näkee hyllyistä kirjat ja voi painaa kirjasta, jolloin siitä näytetään lisää tietoa (kuten kuvaus ja kirjoittaja, ostovuosi tms.).
+6. Käyttäjä näkee hyllyistä kirjat ja voi painaa kirjasta, jolloin siitä näytetään lisää tietoa (kuten kuvaus ja kirjoittaja, ostovuosi tms.). :heavy_check_mark:
 7. Käyttäjä voi antaa arvion (tähdet ja kommentti) kirjasta ja lukea muiden antamia arvioita.
 8. Käyttäjä voi etsiä kaikki kirjat, joiden kuvauksessa on annettu sana.
 9. Käyttäjä näkee myös listan, jossa kirjat on järjestetty parhaimmasta huonoimpaan arvioiden mukaisesti.
