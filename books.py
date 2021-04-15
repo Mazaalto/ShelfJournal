@@ -39,6 +39,5 @@ def search_from_genre(query):
 def get_book(id):
     sql = "SELECT book_title, author_name, user_id, sent_at, info FROM books WHERE id=:id"
     result = db.session.execute(sql, {"id":id})
-    book = result.fetchone()[0]
-    return book
+    return result.fetchall()
     
