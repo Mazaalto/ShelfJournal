@@ -94,5 +94,5 @@ def search_result_from_genre():
 
 @app.route("/kirjantiedot/<int:id>", methods=["GET"])
 def kirjantiedot(id):
-    book = books.get_book(id)
+    list = books.get_book(id)
     return render_template("book.html", id=id, book=list)
