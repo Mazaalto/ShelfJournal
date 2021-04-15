@@ -3,9 +3,9 @@
     <head>
         <tr>
           <p>Kirjan tiedot:</p>  
-          <td>{{ book[0][1] }}</td>
-          <td> </td>
-          <td>Tähän tulee kirjan arviointi</td>
+          <td>Kirjan nimi: {{ book[0][1] }}</td>
+          <td>Kijailijan nimi : {{ book[0][2] }} </td>
+          <td>Lisätty tietokantaan: {{ book[4].strftime("%Y-%m-%d %H:%M:%S") }}</td>
         </tr>
     </head>
     <body></body>
