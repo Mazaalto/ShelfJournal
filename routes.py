@@ -96,3 +96,13 @@ def search_result_from_genre():
 def kirjantiedot(id):
     list = books.get_book(id)
     return render_template("book.html", id=id, book=list)
+
+@app.route("/kirjanarviointi/<int:id>", methods=["GET"])
+def book_review(id):
+    list = books.get_book(id)
+    return render_template("review.html", id=id, book=list)
+
+@app.route("/kirjanarvioinnit/<int:id>", methods=["GET"])
+def get_book_reviews(id):
+    list = books.get_book(id)
+    return render_template("reviews.html", id=id, book=list)

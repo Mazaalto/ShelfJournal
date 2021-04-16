@@ -12,6 +12,16 @@ CREATE TABLE books (
     info TEXT
 
 );
+CREATE TABLE stars (
+    id SERIAL PRIMARY KEY,
+    book_id INTEGER REFERENCES books,
+    choice TEXT
+);
+CREATE TABLE reviews (
+    id SERIAL PRIMARY KEY,
+    star_id INTEGER REFERENCES stars,
+    sent_at TIMESTAMP
+);
 
 
 
