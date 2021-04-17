@@ -44,7 +44,7 @@ def register_new_user():
         password = request.form["password"]
         if len(password) < 8 or len(password) > 20:
             return render_template("error.html", message = "Salasana on liian lyhyt(alle 8) tai pitkä (yli 30)")
-        if users.register(username,password):
+        if users.register_new_user(username,password):
             return redirect("/")
         else:
             return render_template("error.html",message="Käyttäjänimi saattaa olla käytössä, kokeile toista nimeä")
