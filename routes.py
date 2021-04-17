@@ -44,7 +44,8 @@ def register_new_user():
         password = request.form["password"]
         if len(password) < 8 or len(password) > 20:
             return render_template("error.html", message = "Salasana on liian lyhyt(alle 8) tai pitkä (yli 30)")
-        if users.register_new_user(username,password):
+            # Tallenetaan kaikki automaattisesti ei admineina
+        if users.register_new_user(username,password,0):
             return redirect("/")
         else:
             return render_template("error.html",message="Käyttäjänimi saattaa olla käytössä, kokeile toista nimeä")
@@ -60,7 +61,7 @@ def login_to_ShelfJournal():
         username = request.form["username"]
         password = request.form["password"]
         
-        # Jos kirjautuminen onnistuu, eli on true, näytetään pääsivu kokonaisuudessaan
+        # Jos kirjautuminen onnistuu, eli on true, näytetään pääsivu kokonaisuudessaan. Muuten virhesivu
         if users.login_to_ShelfJournal(username,password):
             return redirect("/")
         else:
