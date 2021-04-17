@@ -33,10 +33,10 @@ def index():
     return render_template("index.html", count=len(list), books=list)
 
 # Uuden käyttäjän rekisteröiminen
-@app.route("/register", methods=["GET","POST"])
-def register():
+@app.route("/register_new_user", methods=["GET","POST"])
+def register_new_user():
     if request.method == "GET":
-        return render_template("register.html")
+        return render_template("register_new_user.html")
     if request.method == "POST":
         username = request.form["username"]
         if len(username) < 8 or len(username) > 20:
@@ -50,14 +50,18 @@ def register():
             return render_template("error.html",message="Käyttäjänimi saattaa olla käytössä, kokeile toista nimeä")
 
 # Kirjautuminen sovellukseen
-@app.route("/login", methods=["GET","POST"])
-def login():
+@app.route("/login_to_ShelfJournal", methods=["GET","POST"])
+def login_to_ShelfJournal():
+    # ohjataan käyttäjä kirjautumaan jos ei vielä kirjautunut
     if request.method == "GET":
-        return render_template("login.html")
+        return render_template("login_to_ShelfJournal.html")
+
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-        if users.login(username,password):
+        
+        # Jos kirjautuminen onnistuu, eli on true, näytetään pääsivu kokonaisuudessaan
+        if users.login_to_ShelfJournal(username,password):
             return redirect("/")
         else:
             return render_template("error.html",message="Väärä tunnus tai salasana. Ole hyvä ja kokeile uudelleen!")

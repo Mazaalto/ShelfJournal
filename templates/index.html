@@ -41,7 +41,7 @@
             <th>Kirjan tiedot</th>
           </tr>
         {% for book in books %}
-        <tr>
+        <tr>  
           <td>{{ book[1] }}</td>
           <td> {{ book[2] }}</td>
           <td> {{ book[4].strftime("%Y-%m-%d %H:%M:%S") }}</td>
@@ -53,7 +53,7 @@
       </table>
         
         {% else %}
-        <a href="/login">Kirjaudu sisään</a>
+        <a href="/login">Kirjaudu sisään ShelfJournaliin</a>
         
         {% endif %}
         <p>
