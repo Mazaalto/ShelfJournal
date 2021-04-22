@@ -35,7 +35,7 @@ def index():
     return render_template("index.html", count=len(list), books=list)
 
 @app.route("/mybooks", methods=["GET"])
-def index():
+def index2():
     id = user_id = request.form["id"]
     list = books.get_my_books_as_a_list(id)
     return render_template("index.html", count=len(list), books=list)
