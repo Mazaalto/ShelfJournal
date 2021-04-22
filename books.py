@@ -9,14 +9,22 @@ def get_books_as_a_list():
     return result.fetchall()
 
 # Kirjan lisäys tietokantaan
-def save(book_title, author_name, info):
+def save(book_title, author_name, user_id, info, visibility):
     user_id = users.user_id()
     if user_id == 0:
         return False
-    sql = "INSERT INTO books (book_title, author_name, user_id, sent_at, info) VALUES (:book_title, :author_name, :user_id, NOW(), :info)"
-    db.session.execute(sql, {"book_title":book_title, "author_name":author_name, "user_id":user_id, "info":info})
+    sql = "INSERT INTO books (book_title, author_name, user_id, sent_at, info, visibility) VALUES (:book_title, :author_name, :user_id, NOW(), :info, :visibility)"
+    db.session.execute(sql, {"book_title":book_title, "author_name":author_name, "user_id":user_id, "info":info, "visibility":visibility})
     db.session.commit()
     return True
+
+id SERIAL PRIMARY KEY,
+    book_title TEXT,
+    author_name TEXT,
+    user_id INTEGER REFERENCES users,
+    sent_at TIMESTAMP,
+    info TEXT,
+    visibility TEXT
 
 #Toteutettu kirjan etsintä nimen perusteella
 def search(query):

@@ -10,7 +10,8 @@ CREATE TABLE books (
     author_name TEXT,
     user_id INTEGER REFERENCES users,
     sent_at TIMESTAMP,
-    info TEXT
+    info TEXT,
+    visibility TEXT
 
 );
 CREATE TABLE stars (

@@ -3,6 +3,7 @@
 <html>
   Tervetuloa ShelfJournaliin!
     <head>{% if session.user_id %}
+      <p>Olet kirjautunut nimellä {{ session.user_id }}</p>
       <style>
         table, td, th {
           border: 1px solid black;

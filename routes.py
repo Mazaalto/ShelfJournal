@@ -9,6 +9,7 @@ def register_new_book():
     return render_template("register_new_book.html")
         
 # Kirjan tallentamista
+# def save(book_title, author_name, user_id, info, visibility):
 @app.route("/registered_book", methods=["POST"])
 def registered_book():
     book_title = request.form["book_title"]
@@ -20,7 +21,7 @@ def registered_book():
     info = request.form["info"]
     if len(info) > 100:
         return render_template("error.html", message = "Kirjoitit liian pitkän kuvauksen")
-    # tahan tulee kategoria, jahka hakutoiminto toimii
+    user_id = 
 
     if books.save(book_title, author_name, info):
         return redirect("/")
