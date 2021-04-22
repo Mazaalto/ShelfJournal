@@ -18,14 +18,6 @@ def save(book_title, author_name, user_id, info, visibility):
     db.session.commit()
     return True
 
-id SERIAL PRIMARY KEY,
-    book_title TEXT,
-    author_name TEXT,
-    user_id INTEGER REFERENCES users,
-    sent_at TIMESTAMP,
-    info TEXT,
-    visibility TEXT
-
 #Toteutettu kirjan etsintä nimen perusteella
 def search(query):
     sql = "SELECT id, book_title, author_name FROM books WHERE book_title LIKE :query"
