@@ -21,9 +21,10 @@ def registered_book():
     info = request.form["info"]
     if len(info) > 100:
         return render_template("error.html", message = "Kirjoitit liian pitkän kuvauksen")
-    
-
-    if books.save(book_title, author_name, info):
+        # tallentuu joko private tai public
+    visibility = request.form["visibility"]
+    user_id = request.form["id"]
+    if books.save(book_title, author_name, user_id, info, visibility):
         return redirect("/")
     else:
         return render_template("error.html",message=" Kirjan tallentaminen ei onnistunut ")

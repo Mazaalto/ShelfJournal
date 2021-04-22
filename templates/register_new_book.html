@@ -11,8 +11,13 @@
         <p>
         Kirjan genre: <br>
         <textarea name="info" rows="3" cols="60"></textarea>
-        <p>   
+        <p>
+        Kirjan näkyvyys:
+        <input type="radio" name="visibility" value="private"> Vain minä 
+        <input type="radio" name="visibility" value="public"> Kaikki käyttäjät      
         
+        <input type="hidden" name="id" value={{ session.user_id }}>
+
         <input type="submit" value="Lähetä">
         </form>
         <script>
