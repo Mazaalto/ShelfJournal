@@ -4,7 +4,7 @@ import users
 # Kirjat listaksi
 def get_books_as_a_list():
     # muutettu hakua niin että tulisi myös id, jotta voitaisiin arvioida kirjoja heti listauksesta ilman turhaa sivua   
-    sql = "SELECT B.id, B.book_title, B.author_name, B.sent_at, B.visibility FROM books B, users U WHERE B.user_id=U.id AND visibility=public ORDER BY B.book_title"
+    sql = "SELECT B.id, B.book_title, B.author_name, B.sent_at, B.visibility FROM books B, users U WHERE B.user_id=U.id AND B.visibility=public ORDER BY B.book_title"
     result = db.session.execute(sql)
     return result.fetchall()
 
