@@ -31,6 +31,7 @@ def registered_book():
 
 @app.route("/")
 def index():
+    # palauttaa kaikki kirjat, jotka ovat julkisia
     list = books.get_books_as_a_list()
     return render_template("index.html", count=len(list), books=list)
 
