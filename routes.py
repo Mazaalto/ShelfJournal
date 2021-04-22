@@ -29,12 +29,12 @@ def registered_book():
     else:
         return render_template("error.html",message=" Kirjan tallentaminen ei onnistunut ")
 
-@app.route("/1")
+@app.route("/")
 def index():
     list = books.get_books_as_a_list()
     return render_template("index.html", count=len(list), books=list)
 
-@app.route("/", methods=["GET"])
+@app.route("/mybooks", methods=["GET"])
 def index():
     id = user_id = request.form["id"]
     list = books.get_my_books_as_a_list(id)
