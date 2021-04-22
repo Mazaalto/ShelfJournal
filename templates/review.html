@@ -6,8 +6,18 @@
           <td>Kirjan nimi: {{ book[0][1] }}</td>
           <td>Kijailijan nimi : {{ book[0][2] }} </td>
           <p>Tähän tulee arviointi</p>
+          <input type="radio" name="review" value="1"> Yksi tähti 
+          <input type="radio" name="review" value="2"> Kaksi tähteä
+          <input type="radio" name="review" value="3"> Kolme tähteä 
+          <input type="radio" name="review" value="4"> Neljä tähteä 
+          <input type="radio" name="review" value="5"> Viisi tähteä
           <p>Tähtien valinta</p>
           <p>Tekstikenttä vapaalle arvostelulle</p>
+          Erikoistoiveet: <br>
+          <textarea name="text_review" rows="5" cols="60"></textarea>
+          <p>
+          <input type="submit" value="Lähetä">
+          </form>
           
         </tr>
     </head>
