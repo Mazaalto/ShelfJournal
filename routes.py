@@ -21,7 +21,7 @@ def registered_book():
     info = request.form["info"]
     if len(info) > 100:
         return render_template("error.html", message = "Kirjoitit liian pitkän kuvauksen")
-    user_id = 
+    
 
     if books.save(book_title, author_name, info):
         return redirect("/")
