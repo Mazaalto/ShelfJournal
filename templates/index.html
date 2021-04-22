@@ -4,6 +4,7 @@
   Tervetuloa ShelfJournaliin!
     <head>{% if session.user_id %}
       <p>Olet kirjautunut käyttäjäidllä: {{ session.user_id }}</p>
+      <input type="hidden" name="id" value={{ session.user_id }}>
       <style>
         table, td, th {
           border: 1px solid black;
@@ -30,7 +31,8 @@
         <p>Tervetuloa digitaaliseen kirjahyllyysi!</p>
         <p>
         Voit pitää yllä omaa digitaalista kirjahyllyä ja arvostella omia kirjoja palvelussa, sekä
-        nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille
+        nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille. Tämä on sovelluksen oletusnäkymä ja näet siinä vain oman kirjastosi.
+        Jos haluat nähdä kaikki palvelussa olevat kirjat paina tästä (tähän tulee toiminnallisuus).
         </p>
         <table>
           <tr>

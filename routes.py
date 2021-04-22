@@ -29,9 +29,15 @@ def registered_book():
     else:
         return render_template("error.html",message=" Kirjan tallentaminen ei onnistunut ")
 
-@app.route("/")
+@app.route("/1")
 def index():
     list = books.get_books_as_a_list()
+    return render_template("index.html", count=len(list), books=list)
+
+@app.route("/", methods=["GET"])
+def index():
+    id = user_id = request.form["id"]
+    list = books.get_my_books_as_a_list(id)
     return render_template("index.html", count=len(list), books=list)
 
 # Uuden käyttäjän rekisteröiminen

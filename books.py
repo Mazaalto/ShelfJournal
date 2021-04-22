@@ -4,7 +4,13 @@ import users
 # Kirjat listaksi
 def get_books_as_a_list():
     # muutettu hakua niin että tulisi myös id, jotta voitaisiin arvioida kirjoja heti listauksesta ilman turhaa sivua   
-    sql = "SELECT B.id, B.book_title, B.author_name, U.username, B.sent_at FROM books B, users U WHERE B.user_id=U.id ORDER BY B.id"
+    sql = "SELECT B.id, B.book_title, B.author_name, B.sent_at FROM books B, users U WHERE B.user_id=U.id ORDER BY B.book_title"
+    result = db.session.execute(sql)
+    return result.fetchall()
+
+def get_my_books_as_a_list(id):
+    # Toteutan tähän hakutoiminnallisuuden, missä haetaan vain omat kirjat 
+    sql = "SELECT B.id, B.book_title, B.author_name, B.sent_at FROM books B, users U WHERE B.user_id=id ORDER BY B.id"
     result = db.session.execute(sql)
     return result.fetchall()
 
