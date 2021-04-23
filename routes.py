@@ -38,8 +38,8 @@ def index():
 @app.route("/myshelf")
 def myshelf():
     # palauttaa kaikki kirjat, jotka ovat käyttäjän omia
-    id = session["user_id"]
-    list = books.get_my_books_as_a_list(id)
+    # id = session["user_id"]
+    list = books.get_my_books_as_a_list()
     return render_template("myshelf.html", count=len(list), books=list)
 
 # Uuden käyttäjän rekisteröiminen

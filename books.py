@@ -8,8 +8,9 @@ def get_books_as_a_list():
     result = db.session.execute(sql)
     return result.fetchall()
 
-def get_my_books_as_a_list(id):
+def get_my_books_as_a_list():
     # Toteutan tähän hakutoiminnallisuuden, missä haetaan vain omat kirjat 
+    id = users.user_id()
     sql = "SELECT B.id, B.book_title, B.author_name, B.sent_at, B.user_id FROM books B WHERE B.user_id=id ORDER BY B.book_title"
     result = db.session.execute(sql)
     return result.fetchall()
