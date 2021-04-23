@@ -39,7 +39,7 @@ def index():
 def myshelf():
     # palauttaa kaikki kirjat, jotka ovat käyttäjän omia
     id = session["user_id"]
-    list = get_my_books_as_a_list(id)
+    list = books.get_my_books_as_a_list(id)
     return render_template("myshelf.html", count=len(list), books=list)
 
 # Uuden käyttäjän rekisteröiminen
