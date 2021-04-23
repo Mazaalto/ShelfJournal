@@ -11,6 +11,7 @@ def register_new_book():
 # Arvion lisaaminen
 # tähän toteutan kirjan arvioinnin, kirjan id menee review.html
 #jäin siihen miten saan kirjan id:n vietyä registered_reviewhin
+
 @app.route("/kirjanarviointi/<int:id>", methods=["GET"])
 def book_review(id):
     return render_template("review.html", id=id)
