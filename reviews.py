@@ -14,7 +14,7 @@ def save_review(book_id, stars, text_review, visibility):
 # tästä saa listauksen kirjan arvioinneista
 # alkuun pelkästään tietyn kirjan arviot, myöhemmin hienouksia (kuten vain julkiset arviot yms.)
 def get_reviews(id):
-    sql = "SELECT id, book_id, stars, text_review, visibility, sent_at, user_id FROM reviews WHERE book_id=:id"
+    sql = "SELECT book_id, stars, text_review, visibility, sent_at, user_id FROM reviews WHERE book_id=:id"
     result = db.session.execute(sql, {"book_id":id})
     return result.fetchall()
     
