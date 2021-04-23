@@ -8,10 +8,7 @@ from flask import redirect, render_template, request, session
 def register_new_book():
     return render_template("register_new_book.html")
 
-# Arvion lisaaminen
-# tähän toteutan kirjan arvioinnin, kirjan id menee review.html
-#jäin siihen miten saan kirjan id:n vietyä registered_reviewhin
-
+# tästä mennään kirjan arviointisivulle, joka tallentuu registered reviewn kautta
 @app.route("/kirjanarviointi/<int:id>", methods=["GET"])
 def book_review(id):
     return render_template("review.html", id=id)
@@ -141,5 +138,10 @@ def search_result_from_genre():
 def kirjantiedot(id):
     list = books.get_book(id)
     return render_template("book.html", id=id, book=list)
+
+@app.route("/books_reviews/<int:id>", methods=["GET"])
+def books_reviews(id):
+    list = reviews.get_reviews(id)
+    return render_template("reviews.html", id=id, review=list)
 
 
