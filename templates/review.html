@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <form action="/registered_review" method="post"onsubmit="return validate(this)"></form>
         <tr>
           <p>Arvioi kirja:</p>  
           <td>Kirjan nimi: {{ book[0][1] }}</td>
           <td>Kijailijan nimi : {{ book[0][2] }} </td>
+          <td>Kijailijan id testiksi näkyviin : {{ book[0][0] }} </td>
+          <input type="hidden" name="book_id" value={{ book[0][0] }}>
+
           <p>Tähän tulee arviointi</p>
           <input type="radio" name="review" value="1"> Yksi tähti 
           <input type="radio" name="review" value="2"> Kaksi tähteä
@@ -17,9 +21,21 @@
           <textarea name="text_review" rows="5" cols="60"></textarea>
           <p>
           <input type="submit" value="Tallenna arvio">
-          </form>
-          
         </tr>
+      </form>
+      <script>
+        function validate(form) {
+            if (form.text_review.value.length > 100) {
+                alert("Kirjoitit liian pitkän arvion. Maksimi pituus on 100 merkkiä");
+                return false;
+            }
+            return true;
+        }
+        </script>
+    
+
+          
+        
     </head>
     <body></body>
 </html>

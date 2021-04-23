@@ -14,15 +14,15 @@ CREATE TABLE books (
     visibility TEXT
 
 );
-CREATE TABLE stars (
-    id SERIAL PRIMARY KEY,
-    book_id INTEGER REFERENCES books,
-    choice TEXT
-);
+
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
-    star_id INTEGER REFERENCES stars,
-    sent_at TIMESTAMP
+    book_id INTEGER REFERENCES books,
+    stars INTEGER,
+    text_review TEXT,
+    visibility TEXT,
+    sent_at TIMESTAMP,
+    user_id INTEGER REFERENCES users
 );
 
 

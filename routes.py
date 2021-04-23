@@ -1,5 +1,5 @@
 from app import app
-import users, books
+import users, books, reviews
 from flask import redirect, render_template, request, session
 
 
@@ -7,9 +7,35 @@ from flask import redirect, render_template, request, session
 @app.route("/register_new_book")
 def register_new_book():
     return render_template("register_new_book.html")
+
+# Arvion lisaaminen
+# tähän toteutan kirjan arvioinnin, kirjan id menee review.html
+@app.route("/kirjanarviointi/<int:id>", methods=["GET"])
+def book_review(id):
+    return render_template("review.html", id=id)
+# seuraavaksi toteutan arvion tallentamisen
+
+@app.route("/registered_review", methods=["POST"])
+def registered_review():
+    book_id = request.form["book_id"]
+    stars = request.form["review"]
+    text_review = request.form["text_review"]
+    if len(text_review) > 100:
+        return render_template("error.html", message = "Kirjoitit liian pitkän arvion, yli 100 merkkiä")  
+    
+    # tallentuu joko private tai public
+    visibility = request.form["visibility"]
+    if reviews.save_review(book_id, stars, text_review, visibility):
+        return redirect("/")
+    else:
+        return render_template("error.html",message="Arvion tallentaminen ei onnistunut ")
         
 # Kirjan tallentamista
-# def save(book_title, author_name, user_id, info, visibility):
+@app.route("/kirjanarvioinnit/<int:id>", methods=["GET"])
+def get_book_reviews(id):
+    list = books.get_book(id)
+    return render_template("reviews.html", id=id, book=list)
+
 @app.route("/registered_book", methods=["POST"])
 def registered_book():
     book_title = request.form["book_title"]
@@ -112,12 +138,4 @@ def kirjantiedot(id):
     list = books.get_book(id)
     return render_template("book.html", id=id, book=list)
 
-@app.route("/kirjanarviointi/<int:id>", methods=["GET"])
-def book_review(id):
-    list = books.get_book(id)
-    return render_template("review.html", id=id, book=list)
 
-@app.route("/kirjanarvioinnit/<int:id>", methods=["GET"])
-def get_book_reviews(id):
-    list = books.get_book(id)
-    return render_template("reviews.html", id=id, book=list)
