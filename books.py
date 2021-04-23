@@ -12,8 +12,6 @@ def get_my_books_as_a_list():
     # Toteutan tähän hakutoiminnallisuuden, missä haetaan vain omat kirjat 
     id = users.user_id()
     sql = "SELECT B.id, B.book_title, B.author_name, B.sent_at, B.user_id FROM books B WHERE B.user_id=id ORDER BY B.book_title"
-    print("id on nyt", id)
-    print ("tätä tulee tietokannasta nyt ", result.fetchall())
     result = db.session.execute(sql)
     return result.fetchall()
 
