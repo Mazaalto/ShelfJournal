@@ -3,10 +3,8 @@
     <head>
       <form action="/registered_review" method="post"onsubmit="return validate(this)"></form>
         <tr>
-          <p>Arvioi kirja:</p>  
-          <td>Kirjan nimi: {{ book[0][1] }}</td>
-          <td>Kijailijan nimi : {{ book[0][2] }} </td>
-          
+          <p>Arvioi kirja:</p>
+          <input type="hidden" name="book_id" value={{ id }}>
 
           <p>Tähän tulee arviointi</p>
           <input type="radio" name="review" value="1"> Yksi tähti 
