@@ -2,7 +2,7 @@
 <html>
     <head>
       <form action="/registered_review" method="post"onsubmit="return validate(this)">
-        <tr>
+        
           <p>Arvioi kirja:</p>
           <input type="hidden" name="book_id" value={{ id }}>
 
@@ -18,7 +18,7 @@
           <textarea name="text_review" rows="5" cols="60"></textarea>
           <p>
           <input type="submit" value="Tallenna arvio">
-        </tr>
+       
       </form>
       <script>
         function validate(form) {
