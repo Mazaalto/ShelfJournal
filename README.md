@@ -12,13 +12,14 @@ Sovelluksessa näkyy oma kirjasto, joista voi etsiä tietoa ja lukea arvioita. K
 4. Käyttäjä voi etsiä kirjailijan nimen perusteella :heavy_check_mark:
 5. Käyttäjä voi etsiä genren perusteella :heavy_check_mark:
 6. Käyttäjä näkee hyllyistä kirjat ja voi painaa kirjasta, jolloin siitä näytetään lisää tietoa (kuten kuvaus ja kirjoittaja, ostovuosi tms.). :heavy_check_mark:
-7. Käyttäjä voi antaa arvion (tähdet ja kommentti) kirjasta ja lukea muiden antamia arvioita.
-8. Käyttäjä voi etsiä kaikki kirjat, joiden kuvauksessa on annettu sana.
-9. Käyttäjä näkee myös listan, jossa kirjat on järjestetty parhaimmasta huonoimpaan arvioiden mukaisesti.
-10. Käyttäjä voi tehdä lukuryhmän ja lisätä ryhmään jäseniä.
-11. Ylläpitäjä voi tarvittaessa poistaa käyttäjän antaman arvion tai korjata kirjan tietoja ja poistaa ryhmiä.
-12. Ylläpitäjä voi luoda ryhmiä, joihin kirjoja voi luokitella. Kirja voi kuulua yhteen tai useampaan ryhmään. Esim. dekkarit, tietokirjat, kaunokirjallisuus tms.
-13. Oman kirjahyllyn voi jakaa halutessaan valitsemilleen käyttäjille
+7. Käyttäjällä on oma privaatti näkymä ja erikseen näkymä julkisille kirjoille :heavy_check_mark:
+8. Käyttäjä voi antaa arvion (tähdet ja kommentti) kirjasta ja lukea muiden antamia arvioita.
+9. Käyttäjä voi etsiä kaikki kirjat, joiden kuvauksessa on annettu sana.
+10. Käyttäjä näkee myös listan, jossa kirjat on järjestetty parhaimmasta huonoimpaan arvioiden mukaisesti.
+11. Käyttäjä voi tehdä lukuryhmän ja lisätä ryhmään jäseniä.
+12. Ylläpitäjä voi tarvittaessa poistaa käyttäjän antaman arvion tai korjata kirjan tietoja ja poistaa ryhmiä.
+13. Ylläpitäjä voi luoda ryhmiä, joihin kirjoja voi luokitella. Kirja voi kuulua yhteen tai useampaan ryhmään. Esim. dekkarit, tietokirjat, kaunokirjallisuus tms.
+14. Oman kirjahyllyn voi jakaa halutessaan valitsemilleen käyttäjille
 
 Toteutan sovellukseen ensiksi oman digitaalisen kirjahyllyn, sitten arvionnin ja lopuksi ryhmät.
 # Hahmotelma UI:sta
