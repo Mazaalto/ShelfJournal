@@ -38,6 +38,8 @@ def get_book_reviews(id):
     list = books.get_book(id)
     return render_template("reviews.html", id=id, book=list)
 
+    
+
 @app.route("/registered_book", methods=["POST"])
 def registered_book():
     book_title = request.form["book_title"]
