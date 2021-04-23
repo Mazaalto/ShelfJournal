@@ -142,6 +142,6 @@ def kirjantiedot(id):
 @app.route("/books_reviews/<int:id>", methods=["GET"])
 def books_reviews(id):
     list = reviews.get_reviews(id)
-    return render_template("reviews.html", id=id, review=list)
+    return render_template("reviews.html", review=list)
 
 
