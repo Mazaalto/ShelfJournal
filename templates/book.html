@@ -1,12 +1,39 @@
+
 <!DOCTYPE html>
 <html>
     <head>
+      <style>
+          table, td, th {
+            border: 3px solid black;
+          }
+          table {
+            border-collapse: collapse;
+            width: 80%;
+          }
+          td {
+            text-align: center;
+          }
+          </style>
+      <h1>ShelfJournal</h1>
+      <p>Kirjan tiedot:</p>
+      <table>
+          <tr>
+            <th>Kirjan nimi</th>
+            <th>Kirjailijan tai kirjailijoiden nimi</th>
+            <th>Lisätty tietokantaan</th>
+            genre
+          </tr>
+        {% for review in reviews %}
         <tr>
-          <p>Kirjan tiedot:</p>  
           <td>Kirjan nimi: {{ book[0][1] }}</td>
           <td>Kijailijan nimi : {{ book[0][2] }} </td>
           <td>Lisätty tietokantaan: {{ book[0][4].strftime("%d-%m-%Y %H:%M:%S") }}</td>
+          <td>Kirjan genre: {{ book[0][5] }}</td>
+          
         </tr>
-    </head>
+        {% endfor %}
+      </table>
+      
+  </head>
     <body></body>
 </html>
