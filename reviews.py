@@ -41,6 +41,7 @@ def get_all_public_reviews_with_stars(query):
         "WHERE R.visibility='public' AND R.book_id=B.id AND R.user_id=U.id AND R.stars= :query"
     result = db.session.execute(sql, {"query":query})
     return result.fetchall()
+    
 # palauttaa määrän arvioista tietylle book_id:lle
 def get_amount_of_reviews(id):
     sql = "SELECT COUNT(*) FROM reviews R WHERE R.visibility='public' AND R.book_id=:id"
