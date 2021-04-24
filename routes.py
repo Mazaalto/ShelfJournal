@@ -151,6 +151,14 @@ def kirjantiedot(id):
     list = books.get_book(id)
     return render_template("book.html", id=id, book=list)
 
+# Teen toiminnallisuuden näyttämään kirjan saamien arvioiden määrän ja keski-arvon
+@app.route("/this_books_reviews/<int:id>", methods=["GET"])
+def this_books_reviews(id):
+    # kirjan id:llä etsitään sopivat arviot ja tehdään niillä asioita, eli lasketaan määrä ja keskiarvo
+    list = reviews.get_amount_of_reviews(id)
+    return render_template("books_review.html", book=list)
+
+
 @app.route("/books_reviews/<int:id>", methods=["GET"])
 def books_reviews(id):
     list = reviews.get_reviews(id)
