@@ -38,11 +38,6 @@ def get_all_public_reviews_proto_final():
 # tehdään haku tähdillä tähän
 def get_all_public_reviews_with_stars(query):
     sql = "SELECT B.book_title, R.stars, R.text_review, R.visibility, R.sent_at, U.username FROM reviews R, books B, users U " \
-        "WHERE R.visibility='public' AND R.book_id=B.id AND R.user_id=U.id AND R.stars=:query"
-    result = db.session.execute(sql, {"query":"%"+query+"%"})
-    return result.fetchall()
-
-    def search_from_author(query):
-    sql = "SELECT id, book_title, author_name FROM books WHERE author_name LIKE :query"
+        "WHERE R.visibility='public' AND R.book_id=B.id AND R.user_id=U.id AND R.stars=query"
     result = db.session.execute(sql, {"query":"%"+query+"%"})
     return result.fetchall()
