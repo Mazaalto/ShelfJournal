@@ -23,7 +23,7 @@ def get_all_public_reviews():
     result = db.session.execute(sql)
     return result.fetchall()
 
-# villi idea, tehdään yhdistelevä haku erikseen tänne, joka alkuun siis etsii kirjan nimen id:n perustella (seuraavaksi myös käyttäjän)
+# ehdään yhdistelevä haku erikseen tänne, joka alkuun siis etsii kirjan nimen id:n perustella (seuraavaksi myös käyttäjän)
 def get_all_public_reviews_proto():
     sql = "SELECT B.book_title, R.stars, R.text_review, R.visibility, R.sent_at, R.user_id FROM reviews R, books B WHERE R.visibility='public' AND R.book_id=B.id ORDER BY R.stars"
     result = db.session.execute(sql)
@@ -35,6 +35,9 @@ def get_all_public_reviews_proto_final():
     result = db.session.execute(sql)
     return result.fetchall()
 
-  
-    
-    
+# tehdään haku tähdillä tähän
+def get_all_public_reviews_with_stars(stars):
+    sql = "SELECT B.book_title, R.stars, R.text_review, R.visibility, R.sent_at, U.username FROM reviews R, books B, users U " \
+        "WHERE R.visibility='public' AND R.book_id=B.id AND R.user_id=U.id AND R.stars=:stars"
+    result = db.session.execute(sql, {"stars":"%"+stars+"%"})
+    return result.fetchall()
