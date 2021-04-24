@@ -142,8 +142,8 @@ def search_result_from_genre():
 # tähän tulee tähdillä hakeminen    
 @app.route("/search_result_with_stars", methods=["GET"])
 def search_result_with_stars():
-    stars = request.form["review"]
-    list = reviews.get_all_public_reviews_with_stars(stars)
+    query = request.args["query"]
+    list = reviews.get_all_public_reviews_with_stars(query)
     return render_template("reviews.html", reviews=list)
     
 @app.route("/kirjantiedot/<int:id>", methods=["GET"])
