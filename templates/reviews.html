@@ -2,10 +2,47 @@
 <html>
     <head>
         <tr>
-          <p>TTässä on kaikki palveluun laitetut julkiset arvostelut:</p>  
+          <p>Tässä on kaikki palveluun laitetut julkiset arvostelut:</p>  
           <td>Arvostelun joku tieto: {{ review[1] }}</td>
           
         </tr>
     </head>
+
+    <head>
+      <style>
+          table, td, th {
+            border: 3px solid black;
+          }
+          table {
+            border-collapse: collapse;
+            width: 80%;
+          }
+          td {
+            text-align: center;
+          }
+          </style>
+      <h1>ShelfJournal</h1>
+      <p>Tässä on kaikki palveluun laitetut julkiset arvostelut:</p>
+      <table>
+          <tr>
+            <th>Kirjan id (tulee pian nimi)</th>
+            <th>Tähtiä</th>
+            <th>Tekstiarvostelu</th>
+            <th>laittoaika</th>
+            <th>käyttäjän id</th>
+          </tr>
+        {% for review in reviews %}
+        <tr>
+          <td>{{ review[0][0] }}</td>
+          <td>{{ review[0][1] }}</td>
+          <td>{{ review[0][2] }}</td>
+          <td>{{ review[0][4] }}</td>
+          <td>{{ review[0][5] }}</td>
+          
+        </tr>
+        {% endfor %}
+      </table>
+      
+  </head>
     <body></body>
 </html>
