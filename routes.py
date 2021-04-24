@@ -140,7 +140,7 @@ def search_result_from_genre():
     return render_template("result.html",books=list)
 
 # tähän tulee tähdillä hakeminen    
-@app.route("/search_result_with_stars/<int:id>", methods=["GET"])
+@app.route("/search_result_with_stars/review=<int:id>", methods=["GET"])
 def search_result_with_stars():
     stars = request.form["review"]
     list = reviews.get_all_public_reviews_with_stars(stars)
