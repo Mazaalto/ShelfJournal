@@ -37,7 +37,7 @@ def get_book_reviews(id):
 
 @app.route("/reviews_as_list", methods=["GET"])
 def reviews_as_list ():
-    list = reviews.get_all_public_reviews_proto()
+    list = reviews.get_all_public_reviews_proto_final()
     return render_template("reviews.html", reviews=list)
 
    

@@ -29,6 +29,11 @@ def get_all_public_reviews_proto():
     result = db.session.execute(sql)
     return result.fetchall()
 
+def get_all_public_reviews_proto_final():
+    sql = "SELECT B.book_title, R.stars, R.text_review, R.visibility, R.sent_at, U.username FROM reviews R, books B, users U " \
+        "WHERE R.visibility='public' AND R.book_id=B.id AND R.user_id=U.id ORDER BY R.stars"
+    result = db.session.execute(sql)
+    return result.fetchall()
 
   
     
