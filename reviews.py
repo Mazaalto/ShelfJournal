@@ -39,5 +39,5 @@ def get_all_public_reviews_proto_final():
 def get_all_public_reviews_with_stars(stars):
     sql = "SELECT B.book_title, R.stars, R.text_review, R.visibility, R.sent_at, U.username FROM reviews R, books B, users U " \
         "WHERE R.visibility='public' AND R.book_id=B.id AND R.user_id=U.id AND R.stars=:stars"
-    result = db.session.execute(sql, {"stars":"%"+stars+"%"})
+    result = db.session.execute(sql, {"stars":stars)
     return result.fetchall()
