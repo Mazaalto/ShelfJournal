@@ -35,7 +35,12 @@ def get_book_reviews(id):
     list = books.get_book(id)
     return render_template("reviews.html", id=id, book=list)
 
-    
+@app.route("/reviews_as_list ", methods=["GET"])
+def reviews_as_list ():
+    list = reviews.get_all_public_reviews()
+    return render_template("reviews.html", review=list)
+
+   
 
 @app.route("/registered_book", methods=["POST"])
 def registered_book():

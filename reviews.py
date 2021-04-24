@@ -17,4 +17,12 @@ def get_reviews(id):
     sql = "SELECT book_id, stars, text_review, visibility, sent_at, user_id FROM reviews WHERE book_id=:id"
     result = db.session.execute(sql, {"book_id":id})
     return result.fetchall()
+
+def get_all_public_reviews():
+    sql = "SELECT R.book_id, R.stars, R.text_review, R.visibility, R.sent_at, R.user_id FROM reviews R WHERE R.visibility='public' ORDER BY R.stars"
+    result = db.session.execute(sql)
+    return result.fetchall()
+
+  
+    
     
