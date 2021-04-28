@@ -10,6 +10,23 @@
         
     <head>{% if session.user_id %}
       <p>Olet kirjautunut käyttäjäidllä: {{ session.user_id }}</p>
+      <nav class="navbar navbar-expand-sm navbar-light">
+        <a class="navbar-brand" href="/">Palvelun päänäkymä</a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/register_new_book">Lisää kirja kirjahyllyysi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/search">Etsi kirjaa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/reviews_as_list">Näytä arviot</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Kirjaudu ulos</a>
+          </li>
+        </ul>
+      </nav>
       
       <style>
         table, td, th {
@@ -23,19 +40,6 @@
           text-align: center;
         }
         </style>
-        <p>Olet kirjautunut ShelfJournaliin.</p>
-        <title>ShelfJournal</title>
-        <nav>
-            <ul>
-              <li><a href="/register_new_book">Lisää kirja kirjahyllyysi</a></li>
-              <li><a href="/search">Etsi kirjaa</a></li>
-              <li><a href="/logout">Kirjaudu ulos</a></li>
-              <li><a href="/reviews_as_list">Näytä arviot</a></li>
-              <li><a href="/">Palvelun päänäkymä</a></li>
-            </ul>
-        </nav>
-        
-         
         <h1>ShelfJournal</h1>
         <p>Tervetuloa digitaaliseen kirjahyllyysi!</p>
         <p>
@@ -76,8 +80,6 @@
       </div>
     </div>
   </div>
-  
-        <img src="/static/kirjahylly.jpg"> 
     </head>
     <body>
         
