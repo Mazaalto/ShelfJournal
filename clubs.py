@@ -8,7 +8,7 @@ def save_club(club_title, club_info, club_password, user_id, visibility):
     if user_id == 0:
         return False
     sql = "INSERT INTO clubs (club_title, club_info, club_password, user_id, visibility) VALUES (:club_title, :club_info, :club_password, :user_id, :visibility)"
-    db.session.execute(sql, {"club_title":club_title, "club_info":club_info, "club_password":club_password, "user_id ":user_id, "visibility":visibility})
+    db.session.execute(sql, {"club_title":club_title, "club_info":club_info, "club_password":club_password, "user_id":user_id, "visibility":visibility})
     db.session.commit()
     return True
 
