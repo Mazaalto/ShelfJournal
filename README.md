@@ -16,7 +16,7 @@ Sovelluksessa näkyy oma kirjasto, joista voi etsiä tietoa ja lukea arvioita. K
 8. Käyttäjä voi antaa arvion (tähdet ja kommentti) kirjasta ja lukea muiden antamia arvioita.:heavy_check_mark:
 9. Käyttäjä voi etsiä kaikki kirjat, joiden genressä on annettu sana.:heavy_check_mark:
 10. Käyttäjä voi järjestää arviot etsi kirja osiossa, valitsemalla minkä arvosanan listan haluaa nähdä.:heavy_check_mark:
-11. Käyttäjä voi tehdä lukuryhmän ja lisätä ryhmään jäseniä.
+11. Käyttäjä voi tehdä lukuryhmän:heavy_check_mark: ja lisätä ryhmään jäseniä (ryhmän jäsenet liittyvät siihen itse salasanalla).
 12. Ylläpitäjä voi tarvittaessa poistaa käyttäjän antaman arvion tai korjata kirjan tietoja ja poistaa ryhmiä.
 13. Ylläpitäjä voi luoda ryhmiä, joihin kirjoja voi luokitella. Kirja voi kuulua yhteen tai useampaan ryhmään. Esim. dekkarit, tietokirjat, kaunokirjallisuus tms.
 14. Oman kirjahyllyn voi jakaa halutessaan valitsemilleen käyttäjille
