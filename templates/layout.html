@@ -9,10 +9,9 @@
         <div class="row">
         <div class="col-7">
         <h1>ShelfJournal</h1>
-        
-    {% if session.user_id %}
-      <p>Olet kirjautunut käyttäjäidllä: {{ session.user_id }}</p>
-      <nav class="navbar navbar-expand-sm navbar-light">
+        {% if session.user_id %}
+        <p>Olet kirjautunut käyttäjäidllä: {{ session.user_id }}</p>
+        <nav class="navbar navbar-expand-sm navbar-light">
         <a class="navbar-brand" href="/">Palvelun päänäkymä</a>
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -38,10 +37,26 @@
           </li>
         </ul>
       </nav>
-    {% block content %}{% endblock %}
-    {% endif %}
+        {% block content %}{% endblock %}
+        {% endif %}
+        <div class="col-3">
+        <p>
+        <img src="/static/kirjahylly.jpg"> 
+      </div>
     </head>
     <body>
+        <style>
+            table, td, th {
+              border: 1px solid black;
+            }
+            table {
+              border-collapse: collapse;
+              width: 80%;
+            }
+            td {
+              text-align: center;
+            }
+            </style>
     </body>
 </html>
 
