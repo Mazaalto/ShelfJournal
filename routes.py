@@ -1,5 +1,5 @@
 from app import app
-import users, books, reviews
+import users, books, reviews, clubs
 from flask import redirect, render_template, request, session
 
 
