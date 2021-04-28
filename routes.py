@@ -12,6 +12,7 @@ def organize_book_club():
 @app.route("/registered_book_club", methods=["POST"])
 def registered_book_club():
     club_title = request.form["club_title"]
+    user_id = 
     if len(club_title) > 50:
         return render_template("error.html", message = "Kirjoitit liian pitkän nimen kirjaryhmälle")
     club_info = request.form["club_info"]
