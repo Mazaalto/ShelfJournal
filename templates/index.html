@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-
+{% extends "layout.html" %}
+{% block title %}Tervetuloa ShelfJournaliin!{% endblock %}
+{% block content %}
 <html>
-  Tervetuloa ShelfJournaliin!
     <head>{% if session.user_id %}
       <p>Olet kirjautunut käyttäjäidllä: {{ session.user_id }}</p>
       
@@ -18,20 +19,7 @@
         }
         </style>
         <p>Olet kirjautunut ShelfJournaliin.</p>
-        <title>ShelfJournal</title>
-        <nav>
-            <ul>
-              <li><a href="/register_new_book">Lisää kirja kirjahyllyysi</a></li>
-              <li><a href="/search">Etsi kirjaa</a></li>
-              <li><a href="/myshelf">Oma kirjahyllysi</a></li>
-              <li><a href="/reviews_as_list">Näytä arviot</a></li>
-              <li><a href="/organize_book_club">Muodosta lukupiiri</a></li>
-              <li><a href="/join_book_club">Liity lukupiiriin</a></li>
-              <li><a href="/logout">Kirjaudu ulos</a></li>
-
-            </ul>
-          </nav>
-         
+        <title>ShelfJournal</title> 
         <h1>ShelfJournal</h1>
         <p>Tervetuloa digitaaliseen kirjahyllyysi!</p>
         <p>
@@ -67,6 +55,7 @@
         <p>
         
         </p>
+        {% endblock %}
         <img src="/static/kirjahylly.jpg"> 
     </head>
     <body>
