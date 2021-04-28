@@ -2,13 +2,9 @@
 <html>
     <head>
         <p>Tähän tulee mahdollisuus liittyä ryhmiin. Listauksesta voi tarkastella mitä ryhmiä on, ja syöttämällä salasanan voi liittyä valittuun ryhmään:</p>  
-        Kieli:
         
-        <select name="lang">
-            <option value="1" selected> Clubi 1
-            <option value="2"> Clubi 2
-            <option value="3"> Clubi 3
-        </select>  
+        
+        
       <style>
           table, td, th {
             border: 3px solid black;
@@ -30,10 +26,13 @@
             <th>Ryhmän info</th>
             
           </tr>
+        Valitse ryhmä, johon haluat liittyä:
         <select name="lang">
         {% for club in clubs %}
+        arvo = {{ club[0] }}
+           name = {{ club[1] }}
+          <option value="arvo" selected> name
         <tr>
-          <option value={{ club[0] }} selected> {{ club[1] }}
           <td>{{ club[0] }}</td>
           <td>{{ club[1] }}</td>
           <td>{{ club[2] }}</td>
