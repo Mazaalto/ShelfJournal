@@ -24,8 +24,16 @@ CREATE TABLE reviews (
     sent_at TIMESTAMP,
     user_id INTEGER REFERENCES users
 );
-
-
-
-
-
+CREATE TABLE clubs (
+    id SERIAL PRIMARY KEY,
+    club_title TEXT,
+    club_info TEXT,
+    club_password TEXT,
+    user_id INTEGER REFERENCES users,
+    visibility TEXT
+);
+CREATE TABLE persons_of_club (
+    id SERIAL PRIMARY KEY,
+    club_id INTEGER REFERENCES clubs,
+    user_id INTEGER REFERENCES users
+);

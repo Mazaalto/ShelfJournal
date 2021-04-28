@@ -25,6 +25,7 @@
               <li><a href="/search">Etsi kirjaa</a></li>
               <li><a href="/myshelf">Oma kirjahyllysi</a></li>
               <li><a href="/reviews_as_list">Näytä arviot</a></li>
+              <li><a href="/organize_book_club">Muodosta lukupiiri</a></li>
               <li><a href="/logout">Kirjaudu ulos</a></li>
 
             </ul>
@@ -53,7 +54,7 @@
           <td> {{ book[2] }}</td>
           <td> {{ book[3].strftime("%d-%m-%Y %H:%M:%S") }}</td>
           <td><a href="/kirjanarviointi/{{ book[0] }}">Arvioi kirja</a></td>
-          <td><a href="/books_reviews/{{ book[0] }}">Tähän tulee arviointien lisätiedot</a></td>
+          <td><a href="/this_books_reviews/{{ book[0] }}">Tähän tulee arviointien lisätiedot</a></td>
           <td><a href="/kirjantiedot/{{ book[0] }}">Kirjan kaikki tiedot</a></td>
         </tr>
         {% endfor %}

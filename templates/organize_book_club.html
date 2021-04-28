@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <form action="/registered_book_club" method="post"onsubmit="return validate(this)">
+        <p> Voit muodostaa ShelfJournalissa itsellesi lukurymän. Lukuryhmien nimet ovat julkisia, mutta voit antaa salasanan ryhmälle, jolloin
+            Käyttäjät pääsevät liittymään ryhmään antamalla salasanan ryhmälle.
+        </p>    
+        Ryhmän nimi: <br>
+        <textarea name="club_title" rows="3" cols="60"></textarea>
+        <p>
+        Ryhmän kuvaus: <br>
+        <textarea name="club_info" rows="3" cols="60"></textarea>
+        <p>
+        Ryhmän salasana: <br>
+        <textarea name="club_password" rows="3" cols="60"></textarea>
+        <p>
+        <input type="hidden" name="id" value={{ session.user_id }}>
+
+        <input type="submit" value="Luo Ryhmä">
+        </form>
+        <script>
+            function validate(form) {
+                if (form.club_title.value.length == 0) {
+                    alert("Ryhmän nimi ei voi olla tyhjä");
+                    return false;
+                }
+                if (form.club_info.value.length == 0) {
+                    alert("Ryhmän kuvaus ei voi olla tyhjä");
+                    return false;
+                }
+                if (form.club_password.value.length == 0) {
+                    alert("Syötä ryhmälle jokin tunnussana");
+                    return false;
+                }
+                if (form.club_title.value.length > 50) {
+                    alert("Ryhmän nimi on liian pitkä");
+                    return false;
+                }
+                if (form.club_password.value.length > 40) {
+                    alert("Ryhmän tunnussana on liian pitkä");
+                    return false;
+                }
+                if (form.club_info.value.length > 40) {
+                    alert("Ryhmän kuvaus on liian pitkä");
+                    return false;
+                }
+                return true;
+            }
+            </script>
+        
+
+    </head>
+    <body></body>
+</html>

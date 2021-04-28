@@ -3,6 +3,31 @@ import users, books, reviews
 from flask import redirect, render_template, request, session
 
 
+
+# Lukupiirin luominen organize_book_club
+@app.route("/organize_book_club")
+def organize_book_club():
+    return render_template("organize_book_club.html")
+
+@app.route("/registered_book_club", methods=["POST"])
+def registered_book_club():
+    club_title = request.form["club_title]
+    if len(club_title) > 50:
+        return render_template("error.html", message = "Kirjoitit liian pitkän nimen kirjaryhmälle")
+    club_info = request.form["club_info"]
+    if len(club_info) > 40:
+        return render_template("error.html", message = "Kirjoitit liian pitkän kuvauksen ryhmälle")    
+    club_password = request.form["club_password"]
+    if len(club_password) > 40:
+        return render_template("error.html", message = "Kirjoitit liian pitkän tunnussanan ryhmälle")
+        # tallentuu joko private tai public
+    user_id = request.form["id"]
+    visibility = "public"
+    if clubs.save_club(club_title, club_info, club_password, user_id, visibility):
+        return redirect("/")
+    else:
+        return render_template("error.html",message="Ryhmän tallentaminen ei onnistunut")
+
 # Kirjan lisaamista
 @app.route("/register_new_book")
 def register_new_book():
