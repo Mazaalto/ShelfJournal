@@ -29,9 +29,7 @@
         Valitse ryhmä, johon haluat liittyä:
         <select name="lang">
         {% for club in clubs %}
-        arvo = {{ club[0] }}
-           name = {{ club[1] }}
-          <option value="arvo" selected> name
+        <option value={{ club[0] }} selected> Klubin numero
         <tr>
           <td>{{ club[0] }}</td>
           <td>{{ club[1] }}</td>
