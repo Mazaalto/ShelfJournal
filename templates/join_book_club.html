@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+{% extends "layout.html" %}
+{% block title %}Liity kirjakerhoon{% endblock %}
+{% block content %}
 <html>
+  
     <head>
         <p>Tähän tulee mahdollisuus liittyä ryhmiin. Listauksesta voi tarkastella mitä ryhmiä on, ja syöttämällä salasanan voi liittyä valittuun ryhmään:</p>  
         
@@ -39,7 +43,7 @@
         </select> 
       </table>
 
-      
+      {% endblock %}    
   </head>
     <body></body>
 </html>
