@@ -3,7 +3,7 @@
     <head>
         <p>Tähän tulee mahdollisuus liittyä ryhmiin. Listauksesta voi tarkastella mitä ryhmiä on, ja syöttämällä salasanan voi liittyä valittuun ryhmään:</p>  
         Kieli:
-        C.id, C.club_title, C.club_info, C.club_password, C.visibility
+        
         <select name="lang">
             <option value="1" selected> Clubi 1
             <option value="2"> Clubi 2
@@ -30,13 +30,16 @@
             <th>Ryhmän info</th>
             
           </tr>
+        <select name="lang">
         {% for club in clubs %}
         <tr>
+          <option value={{ club[0] }} selected> {{ club[1] }}
           <td>{{ club[0] }}</td>
           <td>{{ club[1] }}</td>
           <td>{{ club[2] }}</td>
         </tr>
         {% endfor %}
+        </select> 
       </table>
 
       
