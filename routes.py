@@ -28,6 +28,14 @@ def registered_book_club():
     else:
         return render_template("error.html",message="Ryhmän tallentaminen ei onnistunut")
 
+# mahdollisuus liittyä lukupiiriin "/join_book_club"
+@app.route("/join_book_club", methods=["GET"])
+def join_book_club():
+    list = clubs.get_clubs_as_a_list()
+    return render_template("join_book_club.html", clubs=list)
+
+
+
 # Kirjan lisaamista
 @app.route("/register_new_book")
 def register_new_book():

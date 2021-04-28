@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <p>Tähän tulee mahdollisuus liittyä ryhmiin. Listauksesta voi tarkastella mitä ryhmiä on, ja syöttämällä salasanan voi liittyä valittuun ryhmään:</p>  
+        Kieli:
+        C.id, C.club_title, C.club_info, C.club_password, C.visibility
+        <select name="lang">
+            <option value="1" selected> Clubi 1
+            <option value="2"> Clubi 2
+            <option value="3"> Clubi 3
+        </select>  
+      <style>
+          table, td, th {
+            border: 3px solid black;
+          }
+          table {
+            border-collapse: collapse;
+            width: 80%;
+          }
+          td {
+            text-align: center;
+          }
+          </style>
+      <h1>ShelfJournal</h1>
+      <p>Löytyi seuraavat julkiset arvostelut:</p>
+      <table>
+          <tr>
+            <th>Ryhmän id</th>
+            <th>Ryhmän nimi</th>
+            <th>Ryhmän info</th>
+            
+          </tr>
+        {% for club in clubs %}
+        <tr>
+          <td>{{ club[0] }}</td>
+          <td>{{ club[1] }}</td>
+          <td>{{ club[2] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      
+  </head>
+    <body></body>
+</html>
