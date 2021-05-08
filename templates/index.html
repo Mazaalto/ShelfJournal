@@ -5,18 +5,9 @@
 <html>
     <head>{% if session.user_id %}
       <p>Olet kirjautunut ShelfJournaliin.</p>
-      <style>
-        table, td, th {
-          border: 1px solid black;
-        }
-        table {
-          border-collapse: collapse;
-          width: 80%;
-        }
-        td {
-          text-align: center;
-        }
-        </style>
+      <div class="container">
+        <div class="row">
+          <div class="col-7">
         <h1>ShelfJournal</h1>
         <p>Tervetuloa digitaaliseen kirjahyllyysi!</p>
         <p>
@@ -45,6 +36,7 @@
         </tr>
         {% endfor %}
       </table>
+    </div>
         
         {% else %}
         <a href="/login_to_ShelfJournal">Kirjaudu sisään ShelfJournaliin</a>
@@ -52,10 +44,26 @@
         <p>
         
         </p>
+        <div class="col-3">
+        
+          <p>
+          <img src="/static/kirjahylly.jpg"> 
+        </div>
         {% endblock %}
-        <img src="/static/kirjahylly.jpg"> 
     </head>
     <body>
+      <style>
+        table, td, th {
+          border: 1px solid black;
+        }
+        table {
+          border-collapse: collapse;
+          width: 80%;
+        }
+        td {
+          text-align: center;
+        }
+        </style>
         
     </body>
 </html>
