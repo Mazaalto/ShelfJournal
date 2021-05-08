@@ -4,6 +4,7 @@
 {% block content %}
 <html>
     <head>{% if session.user_id %}
+      <p>Olet kirjautunut ShelfJournaliin.</p>
       <p>Olet kirjautunut käyttäjäidllä: {{ session.user_id }}</p>
       
       <style>
@@ -18,8 +19,6 @@
           text-align: center;
         }
         </style>
-        <p>Olet kirjautunut ShelfJournaliin.</p>
-        <title>ShelfJournal</title> 
         <h1>ShelfJournal</h1>
         <p>Tervetuloa digitaaliseen kirjahyllyysi!</p>
         <p>
