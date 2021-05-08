@@ -4,29 +4,30 @@
 {% block content %}
 <html>
     <head>
+        <div class="header">
+            <h1>Etsi kirjaa ShelfJournalista</h1>
+        </div>
         <p>Täällä voit etsiä onko kirja jo tietokannassa. </p>
 
         <form action="/search_result" method="GET">
         Hae kirjan nimen perusteella kirjoja: <input type="text" name="query">
-        <br>
         <input type="submit" value="Etsi">
         </form>
-
         <form action="/search_result_from_author" method="GET">
         Hae kirjailijan tai kirjailijoiden nimen perusteella kirjoja: <input type="text" name="query">
-        <br>
+
         <input type="submit" value="Etsi">
         </form>
 
         <form action="/search_result_from_genre" method="GET">
         Hae genren perusteella kirjoja: <input type="text" name="query">
-        <br>
+        
         <input type="submit" value="Etsi">
         </form>
 
         <form action="/search_result_with_stars" method="GET">
         Kirjoita monellako tähdellä haetaan (1-5): <input type="text" name="query">
-        <br>
+        
         <input type="submit" value="Etsi">
         </form>
 
