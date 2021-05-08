@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <div class="container">
         <div class="row">
-        <div class="col-10">
+        <div class="col-7">
           <style>
             body {
             background: #d1bfa4;
@@ -27,9 +27,6 @@
           </style>
         
         {% if session.user_id %}
-
-
-        <p>Olet kirjautunut käyttäjäidllä: {{ session.user_id }}</p>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <a class="navbar-brand" href="/">ShelfJournal pääsivu</a>
         <ul class="navbar-nav">
@@ -60,7 +57,7 @@
         {% else %}
         <a href="/login_to_ShelfJournal">Kirjaudu sisään ShelfJournaliin</a>
         {% endif %}
-        <div class="col-5">
+        <div class="col-3">
         <p>
         <img src="/static/kirjahylly.jpg"> 
       </div>
@@ -73,7 +70,6 @@
             table {
               border-collapse: collapse;
               width: 100%;
-              color: bisque;
             }
             td {
               text-align: center;
