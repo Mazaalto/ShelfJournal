@@ -8,24 +8,7 @@
         <div class="container">
         <div class="row">
         <div class="col-7">
-          <style>
-            body {
-            background: #d1bfa4;
-            }
-            .header {
-            background: #181a18;
-            color: azure;
-            padding: 70px;
-            font-size: 1em;
-            }
-            form {
-            display: block;
-            padding: 70px;
-            font-size: 1em;
-            background: #ad5c19;
-            }
-          </style>
-        
+         
         {% if session.user_id %}
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <a class="navbar-brand" href="/">ShelfJournal pääsivu</a>
@@ -61,6 +44,11 @@
         <p>
         <img src="/static/kirjahylly.jpg"> 
       </div>
+      <div class="col-3">
+        
+        <p>
+        <img src="/static/kirjahylly.jpg"> 
+      </div>
     </head>
     <body>
         <style>
@@ -73,6 +61,21 @@
             }
             td {
               text-align: center;
+            }
+            body {
+            background: #d1bfa4;
+            }
+            .header {
+            background: #181a18;
+            color: azure;
+            padding: 70px;
+            font-size: 1em;
+            }
+            form {
+            display: block;
+            padding: 70px;
+            font-size: 1em;
+            background: #ad5c19;
             }
             </style>
     </body>
