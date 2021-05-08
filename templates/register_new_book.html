@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+{% extends "layout.html" %}
+{% block title %}Tervetuloa ShelfJournaliin!{% endblock %}
+{% block content %}
 <html>
     <head>
         <form action="/registered_book" method="post"onsubmit="return validate(this)">
@@ -50,7 +53,7 @@
             }
             </script>
         
-
+        {% endblock %}        
     </head>
     <body></body>
 </html>
