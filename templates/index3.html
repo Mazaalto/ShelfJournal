@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+{% block title %}Tervetuloa ShelfJournaliin!{% endblock %}
+{% block content %}
+<html>
+    <head>{% if session.user_id %}
+      <p>Olet kirjautunut ShelfJournaliin.</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-9">
+            <h1>ShelfJournal</h1>
+            <p>Tervetuloa digitaaliseen kirjahyllyysi!</p>
+            <p>
+            Voit pitää yllä omaa digitaalista kirjahyllyä ja arvostella omia kirjoja palvelussa, sekä
+            nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille. Tämä on sovelluksen oletusnäkymä ja näet siinä ShelfJournalin julkiseksi merkatut kirjat.
+            Jos haluat tarkastella omaa kirjahyllyäsi, 
+            <a href="/myshelf">Oma kirjahyllysi</a>.
+            </p>
+            <table>
+              <tr>
+                <th>Kirjan nimi</th>
+                <th>Kirjoittaja tai kirjoittajat</th>
+                <th>Aika</th>
+                <th>Arviointi</th>
+                <th>Kirjan saamat arviot</th>
+                <th>Kirjan tiedot</th>
+              </tr>
+            {% for book in books %}
+            <tr>  
+              <td>{{ book[1] }}</td>
+              <td> {{ book[2] }}</td>
+              <td> {{ book[3].strftime("%d-%m-%Y %H:%M:%S") }}</td>
+              <td><a href="/kirjanarviointi/{{ book[0] }}">Arvioi kirja</a></td>
+              <td><a href="/this_books_reviews/{{ book[0] }}">Tähän tulee arviointien lisätiedot</a></td>
+              <td><a href="/kirjantiedot/{{ book[0] }}">Kirjan kaikki tiedot</a></td>
+            </tr>
+            {% endfor %}
+            </table>
+          </div>
+        
+        {% else %}
+        <a href="/login_to_ShelfJournal">Kirjaudu sisään ShelfJournaliin</a>
+        <img src="/static/kirjahylly.jpg">
+        {% endif %}
+        <p>
+        
+        </p>
+      </div>  
+      <div class="col-3">
+        <img src="/static/kirjahylly.jpg"> 
+      </div>
+    </div>
+  </div>
+        {% endblock %}
+    </head>
+    <body>
+      <style>
+        table, td, th {
+          border: 1px solid black;
+        }
+        table {
+          border-collapse: collapse;
+          width: 80%;
+        }
+        td {
+          text-align: center;
+        }
+        </style>
+    </body>
+</html>
