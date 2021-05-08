@@ -3,7 +3,6 @@
 {% block title %}Tervetuloa ShelfJournaliin!{% endblock %}
 {% block content %}
 <html>
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <title>ShelfJournal</title>
@@ -13,18 +12,6 @@
         <br>
         
     <head>{% if session.user_id %}
-      <style>
-        table, td, th {
-          border: 1px solid black;
-        }
-        table {
-          border-collapse: collapse;
-          width: 80%;
-        }
-        td {
-          text-align: center;
-        }
-        </style>
         <br>
         <p>Tervetuloa digitaaliseen kirjahyllyysi!</p>
         <p>
@@ -66,6 +53,18 @@
   {% endblock %}
     </head>
     <body>
+      <style>
+        table, td, th {
+          border: 1px solid black;
+        }
+        table {
+          border-collapse: collapse;
+          width: 80%;
+        }
+        td {
+          text-align: center;
+        }
+        </style>
         
     </body>
 </html>
