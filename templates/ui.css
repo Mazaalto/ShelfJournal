@@ -5,12 +5,10 @@ td {
       margin: auto;
       max-width: 65em;
       font-family: 'Helvetica', 'Arial', sans-serif;
-      background: brown;
-    
-    
+      background: #008400;
   }
   .header {
-    background: #008400;
+    background: brown;
     font-weight: bold;
     padding: 100px;
     font-size: 2em;

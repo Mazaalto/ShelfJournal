@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            td {
-              text-align: center;
-            }
-            body {
-                margin: auto;
-                max-width: 65em;
-                font-family: 'Helvetica', 'Arial', sans-serif;
-            }
-
-        </style>
-        <form action="/login_to_ShelfJournal" method="post">
-        <p>Kirjaudu sisään ShelfJournaliin antamalla käyttäjätunnuksesi ja salasanasi:</p>
-        <big>Käyttäjätunnus:</big><input type="text" name="username">
-        <p>
-        <big>Salasana:</big> <input type="password" name="password">
-        <p>
-        <input type="submit" value="Kirjaudu sisään">
-        </form>
-        Jos sinulla ei ole vielä käyttäjätunnuksia, voit luoda ne nopeasti täältä: <a href="/register_new_user">tästä</a>
+        <link rel="stylesheet" href="ui.css"
     </head>
     <body>
+        <form action="/login_to_ShelfJournal" method="post">
+            <p>Kirjaudu sisään ShelfJournaliin antamalla käyttäjätunnuksesi ja salasanasi:</p>
+            <big>Käyttäjätunnus:</big><input type="text" name="username">
+            <p>
+            <big>Salasana:</big> <input type="password" name="password">
+            <p>
+            <input type="submit" value="Kirjaudu sisään">
+            </form>
+            Jos sinulla ei ole vielä käyttäjätunnuksia, voit luoda ne nopeasti täältä: <a href="/register_new_user">tästä</a>
            
     </body>
     
