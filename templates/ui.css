@@ -1,0 +1,8 @@
+td {
+    text-align: center;
+  }
+  body {
+      margin: auto;
+      max-width: 65em;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+  }
