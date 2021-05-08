@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <head>
         <link rel="stylesheet"href="ui.css">
-        <form action="/register_new_user" method="post" onsubmit="return validate(this)">
-        <p>Voit luoda täällä itsellesi uuden käyttäjätunnuksen ja salasanan</p>    
-        <p>Tunnuksen ja salasanan tulee olla vähintään 8-merkkiä pitkiä ja korkeintaan 30 merkkiä.</p>
-        Käyttäjätunnus: <input type="text" name="username">
-        <p>
-        Salasana: <input type="password" name="password">
-        <p>
-        <input type="submit" value="Luo tunnuksesi tästä">
-        </form>
-        <script>
-            function validate(form) {
-                if (form.username.value.length == 0) {
-                    alert("Käyttäjänimi ei voi olla tyhjä");
-                    return false;
-                }
-                if (form.password.value.length == 0) {
-                    alert("Salasana ei voilla tyhjä");
-                    return false;
-                }
-                if (form.username.value.length > 30) {
-                    alert("Liian pitkä käyttäjänimi. Kokeile toista, joka on alle 30-merkkiä");
-                    return false;
-                }
-                if (form.password.value.length > 30) {
-                    alert("Liian pitkä salasana. Kokeile toista, joka on alle 30-merkkiä");
-                    return false;
-                }
-                if (form.username.value.length < 8) {
-                    alert("Liian lyhyt käyttäjänimi. Kokeile toista, joka on yli 8-merkkiä");
-                    return false;
-                }
-                if (form.password.value.length < 8) {
-                    alert("Liian lyhyt salasana. Kokeile toista, joka on yli 8-merkkiä");
-                    return false;
-                }
-                return true;
-            }
-            </script>
     </head>
     <body>
+        <div class="header">
+            <h1>Rekisteröidy käyttäjäksi</h1>
+        </div>          
+        <form action="/register_new_user" method="post" onsubmit="return validate(this)">
+            <p>Voit luoda täällä itsellesi uuden käyttäjätunnuksen ja salasanan</p>    
+            <p>Tunnuksen ja salasanan tulee olla vähintään 8-merkkiä pitkiä ja korkeintaan 30 merkkiä.</p>
+            Käyttäjätunnus: <input type="text" name="username">
+            <p>
+            Salasana: <input type="password" name="password">
+            <p>
+            <input type="submit" value="Luo tunnuksesi tästä">
+            </form>
+            <script>
+                function validate(form) {
+                    if (form.username.value.length == 0) {
+                        alert("Käyttäjänimi ei voi olla tyhjä");
+                        return false;
+                    }
+                    if (form.password.value.length == 0) {
+                        alert("Salasana ei voilla tyhjä");
+                        return false;
+                    }
+                    if (form.username.value.length > 30) {
+                        alert("Liian pitkä käyttäjänimi. Kokeile toista, joka on alle 30-merkkiä");
+                        return false;
+                    }
+                    if (form.password.value.length > 30) {
+                        alert("Liian pitkä salasana. Kokeile toista, joka on alle 30-merkkiä");
+                        return false;
+                    }
+                    if (form.username.value.length < 8) {
+                        alert("Liian lyhyt käyttäjänimi. Kokeile toista, joka on yli 8-merkkiä");
+                        return false;
+                    }
+                    if (form.password.value.length < 8) {
+                        alert("Liian lyhyt salasana. Kokeile toista, joka on yli 8-merkkiä");
+                        return false;
+                    }
+                    return true;
+                }
+                </script>
         
     </body>
 
