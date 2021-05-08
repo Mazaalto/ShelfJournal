@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+{% extends "layout.html" %}
+{% block title %}Tervetuloa ShelfJournaliin!{% endblock %}
+{% block content %}
     <head>
         <form action="/registered_book_club" method="post"onsubmit="return validate(this)">
         <p> Voit muodostaa ShelfJournalissa itsellesi lukurymän. Lukuryhmien nimet ovat julkisia, mutta voit antaa salasanan ryhmälle, jolloin
@@ -51,4 +54,5 @@
 
     </head>
     <body></body>
+    {% endblock %}
 </html>
