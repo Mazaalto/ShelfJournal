@@ -8,6 +8,26 @@
         <div class="container">
         <div class="row">
         <div class="col-7">
+          <style>
+            body {
+            margin: auto;
+            max-width: 45em;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background: #d1bfa4;
+            }
+            .header {
+            background: #181a18;
+            color: azure;
+            padding: 70px;
+            font-size: 1em;
+            }
+            form {
+            display: block;
+            padding: 70px;
+            font-size: 1em;
+            background: #ad5c19;
+            }
+            </style>
         <h1>ShelfJournal</h1>
         {% if session.user_id %}
         <p>Olet kirjautunut käyttäjäidllä: {{ session.user_id }}</p>
