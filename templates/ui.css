@@ -1,15 +1,22 @@
-td {
-    text-align: center;
-  }
-  body {
-      margin: auto;
-      max-width: 65em;
-      font-family: 'Helvetica', 'Arial', sans-serif;
-      background: #008400;
-  }
-  .header {
-    background: brown;
-    font-weight: bold;
-    padding: 100px;
-    font-size: 2em;
+body {
+    margin: auto;
+    max-width: 65em;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background: #008400;
 }
+.header {
+  background: brown;
+  font-weight: bold;
+  padding: 100px;
+  font-size: 2em;
+}
+form {
+  display: block;
+  float: left;
+  padding: .5em;
+}
+.content {
+    background: #cdffeb;
+    padding: 1.5em 2em;
+ }
+ 

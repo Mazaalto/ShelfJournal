@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet"href="ui.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <head>
     </head>
     <body>
         <div class="header">
             <h1>Rekisteröidy käyttäjäksi</h1>
-        </div>          
+        </div>
+        <div class="content">        
         <form action="/register_new_user" method="post" onsubmit="return validate(this)">
             <p>Voit luoda täällä itsellesi uuden käyttäjätunnuksen ja salasanan</p>    
             <p>Tunnuksen ja salasanan tulee olla vähintään 8-merkkiä pitkiä ja korkeintaan 30 merkkiä.</p>
@@ -17,6 +19,7 @@
             <p>
             <input type="submit" value="Luo tunnuksesi tästä">
             </form>
+        </div>  
             <script>
                 function validate(form) {
                     if (form.username.value.length == 0) {
