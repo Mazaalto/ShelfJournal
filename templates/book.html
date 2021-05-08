@@ -1,19 +1,10 @@
 
 <!DOCTYPE html>
+{% extends "layout.html" %}
+{% block title %}Tervetuloa ShelfJournaliin!{% endblock %}
+{% block content %}
 <html>
     <head>
-      <style>
-          table, td, th {
-            border: 3px solid black;
-          }
-          table {
-            border-collapse: collapse;
-            width: 80%;
-          }
-          td {
-            text-align: center;
-          }
-          </style>
       <h1>ShelfJournal</h1>
       <p><b>Kirjan tarkemmat tiedot:</b></p>
       <table>
@@ -36,4 +27,5 @@
       
   </head>
     <body></body>
+    {% endblock %} 
 </html>
