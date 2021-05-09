@@ -2,8 +2,6 @@ from app import app
 import users, books, reviews, clubs
 from flask import redirect, render_template, request, session
 
-
-
 # Lukupiirin luominen organize_book_club
 @app.route("/organize_book_club")
 def organize_book_club():
@@ -34,8 +32,6 @@ def join_book_club():
     list = clubs.get_clubs_as_a_list()
     return render_template("join_book_club.html", clubs=list)
 
-
-
 # Kirjan lisaamista
 @app.route("/register_new_book")
 def register_new_book():
@@ -62,11 +58,11 @@ def registered_review():
     else:
         return render_template("error.html",message="Arvion tallentaminen ei onnistunut ")
         
-# Kirjan tallentamista
+
 @app.route("/kirjanarvioinnit/<int:id>", methods=["GET"])
-def get_book_reviews(id):
-    list = books.get_book(id)
-    return render_template("reviews.html", id=id, book=list)
+def get_reviews(id):
+    list = reviews.get_reviews(id)
+    return render_template("reviews.html", id=id, review=list)
 
 @app.route("/reviews_as_list", methods=["GET"])
 def reviews_as_list ():
