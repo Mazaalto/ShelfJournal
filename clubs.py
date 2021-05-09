@@ -16,3 +16,17 @@ def get_clubs_as_a_list():
     sql = "SELECT C.id, C.club_title, C.club_info, C.club_password, C.visibility FROM clubs C WHERE C.visibility='public'"
     result = db.session.execute(sql)
     return result.fetchall()
+
+def login_to_club(clubname,password):
+    sql = "SELECT password, id FROM clubs WHERE clubname=:clubname"
+    result = db.session.execute(sql, {"clubname":clubname})
+    club = result.fetchone()
+    # jos klubia ei löydy, palautetaan false
+    if club == None:
+        return False
+    else:
+        # werkzeugin valmisfuktio, joka laskee hajautusarvon
+        if check_password_hash(club[0],password):
+            return True
+        else:
+            return False

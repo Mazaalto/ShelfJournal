@@ -64,11 +64,6 @@ def get_reviews(id):
     list = reviews.get_reviews(id)
     return render_template("reviews2.html", id=id, review=list)
 
-#@app.route("/kirjantiedot/<int:id>", methods=["GET"])
-#def kirjantiedot(id):
-    #list = books.get_book(id)
-    #return render_template("book.html", id=id, book=list)
-
 @app.route("/reviews_as_list", methods=["GET"])
 def reviews_as_list ():
     list = reviews.get_all_public_reviews_proto_final()
@@ -140,6 +135,20 @@ def login_to_ShelfJournal():
             return redirect("/")
         else:
             return render_template("error.html",message="Väärä tunnus tai salasana. Ole hyvä ja kokeile uudelleen!")
+
+# Kirjautuminen klubiin
+@app.route("/login_to_club", methods=["POST"])
+def login_to_club():
+    if request.method == "POST":
+        username = request.form["clubname"]
+        password = request.form["password"]
+        
+        # Jos kirjautuminen onnistuu, eli on true, näytetään pääsivu kokonaisuudessaan. Muuten virhesivu
+        if clubs.login_to_club(clubname, password):
+            return redirect("/")
+        else:
+            return render_template("error.html",message="Kirjoititko varmasti salasanan oikein? Voit varmistaa sen klubin vetäjältä")
+
 
 # Uloskirjautuminen
 @app.route("/logout")

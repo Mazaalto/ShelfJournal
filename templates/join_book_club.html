@@ -11,7 +11,7 @@
             <h1>Liity kirjakerhoon</h1>
         </div>
         <p>Tähän tulee mahdollisuus liittyä ryhmiin. Listauksesta voi tarkastella mitä ryhmiä on, ja syöttämällä salasanan voi liittyä valittuun ryhmään:</p>  
-      <p>Löytyi seuraavat julkiset arvostelut:</p>
+      
       <table>
           <tr>
             <th>Ryhmän id</th>
@@ -19,18 +19,23 @@
             <th>Ryhmän info</th>
             
           </tr>
-        Valitse ryhmä, johon haluat liittyä:
-        <select name="lang">
+        
         {% for club in clubs %}
-        <option value={{ club[0] }} selected> Klubin numero
         <tr>
           <td>{{ club[0] }}</td>
           <td>{{ club[1] }}</td>
           <td>{{ club[2] }}</td>
         </tr>
         {% endfor %}
-        </select> 
       </table>
+      Tähän tulee formi, mihin voi syöttää numeron ja salasanan
+      <form action="/login_to_club" method="POST">
+        <big>Ryhmän nimi </big><input type="text" name="clubname">
+        <p>
+        <big>Salasana </big> <input type="password" name="password">
+        <p>
+        <input type="submit" value="Kirjaudu sisään">
+      </form>
  
   </head>
     <body></body>
