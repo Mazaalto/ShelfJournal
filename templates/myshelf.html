@@ -20,10 +20,10 @@
         <table>
           <tr>
             <th>Kirjan nimi</th>
-            <th>Kirjoittaja tai kirjoittajat</th>
+            <th>Kirjoittaja, kirjoittajat</th>
             <th>Aika</th>
-            <th>Arvioi kirja:</th>
-            <th>Kirjan saamat arviot</th>
+            <th>Arvioi kirja</th>
+            <th>Kirjan arviot</th>
             <th>Kirjan tiedot</th>
           </tr>
         {% for book in books %}
@@ -31,9 +31,9 @@
           <td>{{ book[1] }}</td>
           <td> {{ book[2] }}</td>
           <td> {{ book[3].strftime("%d-%m-%Y %H:%M:%S") }}</td>
-          <td><a href="/kirjanarviointi/{{ book[0] }}">Tähän tulee kirjanarviointi</a></td>
-          <td><a href="/kirjanarvioinnit/{{ book[0] }}">Tähän tulee arviointien lisätiedot</a></td>
-          <td><a href="/kirjantiedot/{{ book[0] }}">Kirjan kaikki tiedot</a></td>
+          <td><a href="/kirjanarviointi/{{ book[0] }}">Arvioi</a></td>
+          <td><a href="/kirjanarvioinnit/{{ book[0] }}">Arviot</a></td>
+          <td><a href="/kirjantiedot/{{ book[0] }}">info</a></td>
         </tr>
         {% endfor %}
       </table>
