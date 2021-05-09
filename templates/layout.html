@@ -38,7 +38,11 @@
       </nav>
         {% block content %}{% endblock %}
         {% else %}
+        <div class="header">
+          <h1>Tervetuloa ShelfJournaliin</h1>
+      </div>
         <a href="/login_to_ShelfJournal">Kirjaudu sisään ShelfJournaliin</a>
+        <img src="/static/kirjahylly.jpg"> 
         {% endif %}
     </head>
     <body>
