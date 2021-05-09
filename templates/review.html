@@ -11,21 +11,21 @@
     </div>
       <form action="/registered_review" method="post"onsubmit="return validate(this)">
         
-          <p>Arvioi kirja:</p>
+          
           <input type="hidden" name="book_id" value={{ id }}>
 
-          <p>Valitse montako tähteä annant kirjalle</p>
+          <p><b>Valitse montako tähteä annant kirjalle</b></p>
           <input type="radio" name="review" value="1"> Yksi tähti 
           <input type="radio" name="review" value="2"> Kaksi tähteä
           <input type="radio" name="review" value="3"> Kolme tähteä 
           <input type="radio" name="review" value="4"> Neljä tähteä 
           <input type="radio" name="review" value="5"> Viisi tähteä
           
-          <p>Tekstikenttä vapaalle arvostelulle</p>
-          Vapaamuotoinen arviosi: <br>
+          <p><b>Vapaamuotoinen arviosi:</b></p>
+          <br>
           <textarea name="text_review" rows="5" cols="60"></textarea>
           <p>
-            Arvion näkyvyys:
+           <p>Arvion näkyvyys:</p>
           <input type="radio" name="visibility" value="private"> Vain minä 
           <input type="radio" name="visibility" value="public"> Kaikki käyttäjät
           <input type="submit" value="Tallenna arvio">
