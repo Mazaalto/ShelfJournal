@@ -1,6 +1,6 @@
 # tähän tulee arvostelujen funktiot
 from db import db
-import users
+import users, books
 
 # arvostelun lisääminen tietokantaan
 def save_review(book_id, stars, text_review, visibility):
@@ -11,9 +11,10 @@ def save_review(book_id, stars, text_review, visibility):
     db.session.execute(sql, {"book_id":book_id, "stars":stars, "text_review":text_review, "visibility":visibility, "user_id":user_id})
     db.session.commit()
     return True
-# tästä saa listauksen kirjan arvioinneista
+
+# tästä saa listauksen kirjan arvioinneista, tehdään monen tietokannan haku
 def get_reviews(book_id):
-    sql = "SELECT book_id, stars, text_review, visibility, sent_at, user_id FROM reviews WHERE book_id=:book_id"
+    sql = "SELECT books.book_title, reviews.stars, reviews.text_review, reviews.visibility, reviews.sent_at, reviews.user_id FROM reviews, books WHERE reviews.book_id=:book_id AND books.books_id = reviews.book_id"
     result = db.session.execute(sql, {"book_id":book_id})
     return result.fetchall()
 
