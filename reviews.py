@@ -12,9 +12,9 @@ def save_review(book_id, stars, text_review, visibility):
     db.session.commit()
     return True
 # tästä saa listauksen kirjan arvioinneista
-def get_reviews(id):
-    sql = "SELECT book_id, stars, text_review, visibility, sent_at, user_id FROM reviews WHERE book_id=:id"
-    result = db.session.execute(sql, {"book_id":id})
+def get_reviews(book_id):
+    sql = "SELECT book_id, stars, text_review, visibility, sent_at, user_id FROM reviews WHERE book_id=:book_id"
+    result = db.session.execute(sql, {"book_id":book_id})
     return result.fetchall()
 
 def get_all_public_reviews():
