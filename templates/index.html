@@ -13,11 +13,11 @@
         
     <head>{% if session.user_id %}
         <br>
-        <p>Tervetuloa digitaaliseen kirjahyllyysi!</p>
+        <p><b>Tervetuloa digitaaliseen kirjahyllyysi!</b></p>
             <p>
             Voit pitää yllä omaa digitaalista kirjahyllyä ja arvostella omia kirjoja palvelussa, sekä
-            nähdä mitä arvosteluja ystäväsi ovat antaneet kirjoille. Tämä on sovelluksen oletusnäkymä ja näet siinä ShelfJournalin julkiseksi merkatut kirjat.
-            Jos haluat tarkastella omaa kirjahyllyäsi, 
+            nähdä mitä arvosteluja käyttäjät ovat antaneet kirjoille. Tämä on sovelluksen oletusnäkymä ja näet siinä ShelfJournalin julkiseksi merkatut kirjat.
+            Jos haluat tarkastella omaa kirjahyllyäsi löydät sen täältä, 
             <a href="/myshelf">Oma kirjahyllysi</a>.
             </p>
         <table>
@@ -34,20 +34,15 @@
           <td>{{ book[1] }}</td>
           <td> {{ book[2] }}</td>
           <td> {{ book[3].strftime("%d-%m-%Y %H:%M:%S") }}</td>
-          <td><a href="/kirjanarviointi/{{ book[0] }}">Tähän tulee kirjanarviointi</a></td>
-          <td><a href="/kirjanarvioinnit/{{ book[0] }}">Tähän tulee arviointien lisätiedot</a></td>
-          <td><a href="/kirjantiedot/{{ book[0] }}">Kirjan kaikki tiedot</a></td>
+          <td><a href="/kirjanarviointi/{{ book[0] }}">Arvioi</a></td>
+          <td><a href="/kirjanarvioinnit/{{ book[0] }}">Arviot</a></td>
+          <td><a href="/kirjantiedot/{{ book[0] }}">info</a></td>
         </tr>
         {% endfor %}
       </table>
         
         {% else %}
         <a href="/login_to_ShelfJournal">Kirjaudu sisään ShelfJournaliin</a>
-        <div class="col-3">
-          <br>
-          <br>
-          <img src="/static/kirjahylly.jpg"> 
-        </div>
         {% endif %}
         <p>
         
