@@ -18,8 +18,8 @@ def get_clubs_as_a_list():
     return result.fetchall()
 
 def login_to_club(clubname,password):
-    sql = "SELECT password, id FROM clubs WHERE clubname=:clubname"
-    result = db.session.execute(sql, {"clubname":clubname})
+    sql = "SELECT password, id FROM clubs WHERE club_title=:clubname"
+    result = db.session.execute(sql, {"club_title":clubname})
     club = result.fetchone()
     # jos klubia ei löydy, palautetaan false
     if club == None:
