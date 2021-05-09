@@ -58,11 +58,16 @@ def registered_review():
     else:
         return render_template("error.html",message="Arvion tallentaminen ei onnistunut ")
         
-
+# katson kirjantiedot metodista vinkkiä
 @app.route("/kirjanarvioinnit/<int:id>", methods=["GET"])
 def get_reviews(id):
     list = reviews.get_reviews(id)
-    return render_template("reviews.html", review=list)
+    return render_template("reviews.html", id=id, review=list)
+
+#@app.route("/kirjantiedot/<int:id>", methods=["GET"])
+#def kirjantiedot(id):
+    #list = books.get_book(id)
+    #return render_template("book.html", id=id, book=list)
 
 @app.route("/reviews_as_list", methods=["GET"])
 def reviews_as_list ():
