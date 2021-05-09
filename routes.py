@@ -140,7 +140,7 @@ def login_to_ShelfJournal():
 @app.route("/login_to_club", methods=["POST"])
 def login_to_club():
     if request.method == "POST":
-        username = request.form["clubname"]
+        clubname = request.form["clubname"]
         password = request.form["password"]
         
         # Jos kirjautuminen onnistuu, eli on true, näytetään pääsivu kokonaisuudessaan. Muuten virhesivu
