@@ -62,7 +62,7 @@ def registered_review():
 @app.route("/kirjanarvioinnit/<int:id>", methods=["GET"])
 def get_reviews(id):
     list = reviews.get_reviews(id)
-    return render_template("reviews.html", id=id, review=list)
+    return render_template("reviews.html", review=list)
 
 @app.route("/reviews_as_list", methods=["GET"])
 def reviews_as_list ():
