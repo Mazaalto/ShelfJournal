@@ -14,7 +14,6 @@ CREATE TABLE books (
     visibility TEXT
 
 );
-
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
     book_id INTEGER REFERENCES books,
