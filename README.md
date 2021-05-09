@@ -19,8 +19,8 @@ Omaan kirjastoon pääse välilehdeltä Oma kirjahyllysi. Palvelun päänäkymä
 9. Käyttäjä voi etsiä kaikki kirjat, joiden genressä on annettu sana.:heavy_check_mark:
 10. Käyttäjä voi järjestää arviot etsi kirja osiossa, valitsemalla minkä arvosanan listan haluaa nähdä.:heavy_check_mark:
 11. Käyttäjä voi tehdä lukuryhmän:heavy_check_mark: ja lisätä ryhmään jäseniä (ryhmän jäsenet liittyvät siihen itse salasanalla, ei vielä valmis).
-12. Ylläpitäjä voi tarvittaessa poistaa käyttäjän antaman arvion tai korjata kirjan tietoja ja poistaa ryhmiä.
-13. Ylläpitäjä voi luoda ryhmiä, joihin kirjoja voi luokitella. Kirja voi kuulua yhteen tai useampaan ryhmään. Esim. dekkarit, tietokirjat, kaunokirjallisuus tms.
+12. Ylläpitäjä voi tarvittaessa poistaa käyttäjän antaman arvion tai korjata kirjan tietoja ja poistaa ryhmiä.(ei vielä valmis, ylläpitäjä tietokannassa, muttei vielä toiminnallisuutta poistolle)
+13. Ylläpitäjä voi luoda ryhmiä, joihin kirjoja voi luokitella. Kirja voi kuulua yhteen tai useampaan ryhmään. Esim. dekkarit, tietokirjat, kaunokirjallisuus tms.:heavy_check_mark: (toteutettu kirjan luomisessa luomalla genre, tagit tulevat vasta seuraavaan versioon)
 14. Oman kirjahyllyn voi jakaa halutessaan valitsemilleen käyttäjille:heavy_check_mark: Tämä onnistuu merkkaamalla kirjat julkisiksi.
 
 Toteutan sovellukseen ensiksi oman digitaalisen kirjahyllyn, sitten arvionnin ja lopuksi ryhmät.
