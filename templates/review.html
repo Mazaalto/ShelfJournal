@@ -4,18 +4,23 @@
 {% block content %}
 <html>
     <head>
+        <br>
+      <br>
+      <div class="header">
+        <h1>Arvostele kirja</h1>
+    </div>
       <form action="/registered_review" method="post"onsubmit="return validate(this)">
         
           <p>Arvioi kirja:</p>
           <input type="hidden" name="book_id" value={{ id }}>
 
-          <p>Tähän tulee arviointi</p>
+          <p>Valitse montako tähteä annant kirjalle</p>
           <input type="radio" name="review" value="1"> Yksi tähti 
           <input type="radio" name="review" value="2"> Kaksi tähteä
           <input type="radio" name="review" value="3"> Kolme tähteä 
           <input type="radio" name="review" value="4"> Neljä tähteä 
           <input type="radio" name="review" value="5"> Viisi tähteä
-          <p>Tähtien valinta</p>
+          
           <p>Tekstikenttä vapaalle arvostelulle</p>
           Vapaamuotoinen arviosi: <br>
           <textarea name="text_review" rows="5" cols="60"></textarea>
