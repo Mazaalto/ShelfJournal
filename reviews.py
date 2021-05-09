@@ -12,9 +12,9 @@ def save_review(book_id, stars, text_review, visibility):
     db.session.commit()
     return True
 
-# tästä saa listauksen kirjan arvioinneista, tehdään monen tietokannan haku
+# tästä saa listauksen kirjan arvioinneista
 def get_reviews(book_id):
-    sql = "SELECT books.book_title, reviews.stars, reviews.text_review, reviews.visibility, reviews.sent_at, reviews.user_id FROM reviews, books WHERE reviews.book_id=:book_id AND books.books_id = reviews.book_id"
+    sql = "SELECT book_id, stars, text_review, visibility, sent_at, user_id FROM reviews WHERE book_id=:book_id"
     result = db.session.execute(sql, {"book_id":book_id})
     return result.fetchall()
 
